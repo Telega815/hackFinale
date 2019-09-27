@@ -37,11 +37,11 @@
 
 
 
-    <!--<authentication-manager>-->
-        <!--<authentication-provider user-service-ref="userDetailsServiceImpl">-->
-            <!--<password-encoder ref="bcryptEncoder"/>-->
-        <!--</authentication-provider>-->
-    <!--</authentication-manager>-->
+    <authentication-manager>
+        <authentication-provider user-service-ref="userDetailsServiceImpl">
+            <password-encoder ref="bcryptEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
 
 
 </beans:beans>
