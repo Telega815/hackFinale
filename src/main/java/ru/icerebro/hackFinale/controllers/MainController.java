@@ -15,4 +15,13 @@ public class MainController {
 
         return modelAndView;
     }
+
+    @GetMapping(value = "/registration")
+    public ModelAndView registrationPage() {
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("registration");
+
+        return modelAndView;
+    }
 }
