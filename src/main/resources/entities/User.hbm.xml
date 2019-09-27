@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ru.icerebro.hackFinale.entities.User" table="users" schema="public" catalog="swapydb">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="username" column="username"/>
+        <property name="pwd" column="pwd"/>
+        <many-to-one name="group" class="ru.icerebro.hackFinale.entities.Group" fetch="join" lazy="false">
+            <column name="group_id"/>
+        </many-to-one>
+        <property name="email" column="email"/>
+        <property name="phoneNumber" column="phone_number"/>
+    </class>
+</hibernate-mapping>
