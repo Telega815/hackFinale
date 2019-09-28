@@ -11,7 +11,7 @@ public class MainController {
     public ModelAndView welcomePage() {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("welcome_page");
+        modelAndView.setViewName("mainPage");
 
         return modelAndView;
     }

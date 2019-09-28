@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    height: 45px;
+    background-color: red;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 45px);
+    background-color: chartreuse;
+}
+
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    background-color: green;
+}
+#menu img{
+    cursor: pointer;
+    height: 30px;
+}
+#search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    background-color: black;
+}
+#searchInput{
+    width: 100vw;
+    height: 30px;
+}
+#notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    background-color: aqua;
+}
+#notification img{
+    cursor: pointer;
+    height: 30px;
+}
+
+.cat1{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 125px;
+    width: 100vw;
+    background-color: red;
+}
+.cat11{
+    width: 180px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: blue;
+}
+.cat1img{
+    display: flex;
+    justify-content: space-between;
+}
+.cat1img img{
+    width: 30px;
+    height: 36px;
+    margin: 10px;
+}
+#historySpan{
+    background-color: aqua;
+    width: 100vw;
+    height: 30px;
+}
+.historyDiv{
+    width: 93vw;
+    height: 300px;
+    background-color: beige;
+}
+.hist{
+    display: flex;
+    align-items: center;
+    width: 93vw;
+    height: 50px;
+    background-color: red;
+    border-top: 1px solid black;
+}
+.hist img{
+    width: 30px;
+    margin: 7px 10px;
+}
+.histbordup{
+    border-radius: 10px 10px 0 0;
+    border-top: 0;
+
+}
+.histbordbottom{
+    border-radius: 0 0 10px 10px;
+}
