@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="hackdb@192.168.1.246" uuid="38cad1f5-9ba4-4d0f-8057-f0cf03aefde4">
+    <data-source source="LOCAL" name="hackdb@localhost" uuid="38cad1f5-9ba4-4d0f-8057-f0cf03aefde4">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://192.168.1.246:5432/hackdb</jdbc-url>
+      <jdbc-url>jdbc:postgresql://10.70.10.65:5432/hackdb</jdbc-url>
       <driver-properties>
         <property name="ApplicationName" value="DataGrip" />
       </driver-properties>

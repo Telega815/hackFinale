@@ -22,7 +22,7 @@
         <form-login
                 login-processing-url="/service/loginProcessing"
                 login-page='/'
-                default-target-url="/service/goToUserPage"
+                default-target-url="/mainpage"
                 authentication-failure-url="/sasasasasa"
                 username-parameter="username"
                 password-parameter="pwd"/>

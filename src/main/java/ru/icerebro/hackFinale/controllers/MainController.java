@@ -23,7 +23,7 @@ public class MainController {
     public ModelAndView welcomePage() {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("mainPage");
+        modelAndView.setViewName("welcome_page");
 
         User user = new User();
         modelAndView.addObject("user", user);
@@ -51,11 +51,11 @@ public class MainController {
         return "redirect:/";
     }
 
-//    @GetMapping(value = "/service/goToUserPage")
-//    public ModelAndView mainPage(){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("main_page");
-//
-//        return modelAndView;
-//    }
+    @GetMapping(value = "/mainpage")
+    public ModelAndView mainPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("mainPage");
+
+        return modelAndView;
+    }
 }

@@ -11,7 +11,7 @@
 
     <property name="hibernate.show_sql">true</property>
     <!--<property name="connection.url">jdbc:postgresql:access_control_db</property>-->
-    <property name="connection.url">jdbc:postgresql://192.168.1.246:5432/hackdb</property>
+    <property name="connection.url">jdbc:postgresql://10.70.10.65:5432/hackdb</property>
     <!--<property name="connection.username">postgres</property>-->
     <!--<property name="connection.password">563453</property>-->
     <property name="connection.driver_class">org.postgresql.Driver</property>
