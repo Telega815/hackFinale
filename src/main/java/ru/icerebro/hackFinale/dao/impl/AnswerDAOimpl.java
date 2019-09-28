@@ -44,6 +44,12 @@ public class AnswerDAOimpl implements AnswerDAO {
     @Override
     @Transactional
     public void updateAnswer(Answer answer) {
-        sessionFactory.getCurrentSession().delete(answer);
+        sessionFactory.getCurrentSession().update(answer);
+    }
+
+    @Override
+    @Transactional
+    public Answer getAnswers(Integer answ) {
+        return sessionFactory.getCurrentSession().get(Answer.class, answ);
     }
 }

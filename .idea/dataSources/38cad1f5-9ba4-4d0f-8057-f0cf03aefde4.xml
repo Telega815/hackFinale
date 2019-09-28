@@ -12,8 +12,8 @@
     </database>
     <schema id="4" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2019-09-28.16:03:07.187</IntrospectionTimestamp>
-      <IntrospectionStateNumber>601</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-09-28.19:08:01.024</IntrospectionTimestamp>
+      <IntrospectionStateNumber>631</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -79,7 +79,7 @@
     </sequence>
     <table id="19" parent="4" name="answers">
       <ObjectId>16467</ObjectId>
-      <StateNumber>578</StateNumber>
+      <StateNumber>631</StateNumber>
     </table>
     <table id="20" parent="4" name="group_authorities">
       <ObjectId>16405</ObjectId>
@@ -95,7 +95,7 @@
     </table>
     <table id="23" parent="4" name="questions">
       <ObjectId>16456</ObjectId>
-      <StateNumber>579</StateNumber>
+      <StateNumber>631</StateNumber>
     </table>
     <table id="24" parent="4" name="user_likes">
       <ObjectId>16500</ObjectId>
@@ -107,7 +107,7 @@
     </table>
     <table id="26" parent="4" name="userwatched">
       <ObjectId>16513</ObjectId>
-      <StateNumber>585</StateNumber>
+      <StateNumber>623</StateNumber>
     </table>
     <table id="27" parent="4" name="votes">
       <ObjectId>16448</ObjectId>
@@ -149,13 +149,15 @@
       <Primary>1</Primary>
     </key>
     <foreign-key id="34" parent="19" name="answers_questions_id_fk">
-      <ObjectId>16479</ObjectId>
+      <ObjectId>16544</ObjectId>
       <ColNames>question</ColNames>
       <RefTableId>16456</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>questions</RefTableName>
       <RefKeyName>questions_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
     </foreign-key>
     <column id="35" parent="20" name="id">
       <Position>1</Position>
@@ -431,10 +433,10 @@
       <DataType>integer|0</DataType>
       <StateNumber>585</StateNumber>
     </column>
-    <column id="80" parent="26" name="vote">
-      <Position>3</Position>
+    <column id="80" parent="26" name="question">
+      <Position>4</Position>
       <DataType>integer|0</DataType>
-      <StateNumber>585</StateNumber>
+      <StateNumber>622</StateNumber>
     </column>
     <index id="81" parent="26" name="userwatched_pkey">
       <ObjectId>16517</ObjectId>
@@ -456,13 +458,13 @@
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="84" parent="26" name="userwatched_votes_id_fk">
-      <ObjectId>16524</ObjectId>
-      <ColNames>vote</ColNames>
-      <RefTableId>16448</RefTableId>
+    <foreign-key id="84" parent="26" name="userwatched_questions_id_fk">
+      <ObjectId>16534</ObjectId>
+      <ColNames>question</ColNames>
+      <RefTableId>16456</RefTableId>
       <RefColPositions>1</RefColPositions>
-      <RefTableName>votes</RefTableName>
-      <RefKeyName>votes_pkey</RefKeyName>
+      <RefTableName>questions</RefTableName>
+      <RefKeyName>questions_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="85" parent="27" name="id">

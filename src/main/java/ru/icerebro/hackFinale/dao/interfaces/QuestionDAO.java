@@ -10,4 +10,6 @@ public interface QuestionDAO {
     int saveQuestions(Question qpicture);
     void deleteQuestions(Question qpicture);
     void updateQuestions(Question qpicture);
+
+    Question getQuestions(Integer qId);
 }

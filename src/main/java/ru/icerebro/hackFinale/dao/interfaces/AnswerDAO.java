@@ -10,4 +10,6 @@ public interface AnswerDAO {
     int saveAnswer(Answer answer);
     void deleteAnswer(Answer answer);
     void updateAnswer(Answer answer);
+
+    Answer getAnswers(Integer answ);
 }

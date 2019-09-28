@@ -47,4 +47,10 @@ public class QuestionDAOimpl implements QuestionDAO {
     public void updateQuestions(Question qpicture) {
         sessionFactory.getCurrentSession().update(qpicture);
     }
+
+    @Override
+    @Transactional
+    public Question getQuestions(Integer qId) {
+        return sessionFactory.getCurrentSession().get(Question.class, qId);
+    }
 }

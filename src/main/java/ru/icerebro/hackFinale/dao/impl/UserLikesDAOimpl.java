@@ -44,7 +44,7 @@ public class UserLikesDAOimpl implements UserLikesDAO {
     @Override
     @Transactional
     public void updateUserLikes(UserLikes userLikes) {
-        sessionFactory.getCurrentSession().delete(userLikes);
+        sessionFactory.getCurrentSession().update(userLikes);
     }
 
     @Override
