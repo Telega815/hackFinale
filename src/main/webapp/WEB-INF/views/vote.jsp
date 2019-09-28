@@ -44,7 +44,7 @@
 
         <c:if test="${passed == 1}">
             <div class="imgVoteClip">
-                <img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">
+                <img class="voteImg" src="${pageContext.request.contextPath}/resources/media/bnm.jpg" alt="">
             </div>
             <div class="voteBlock">
                 <form class="voteForm">
@@ -60,7 +60,7 @@
                             <%--<p class="answerСhoice">${answer.description}<input onclick="answChoise(event)" class="answerForQ_${question.id}" id="answer_${answer.id}" type="radio" name="answer" value="a1"></p>--%>
                         </c:forEach>
                     </div>
-                    <div style="padding: 80px 0 0 0;">
+                    <div class="voiceAllPeople">
                         <span>Проголосовали ${voteMap.get(question.id)} человек</span>
                         <%--<input id="qSubmit_${question.id}" onclick="voteNow(event)" class="voteSubmit" type="button" value="Проголосовать">--%>
                     </div>
@@ -70,7 +70,7 @@
 
         <c:if test="${passed == 0}">
             <div class="imgVoteClip">
-                <img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">
+                <img class="voteImg" src="${pageContext.request.contextPath}/resources/media/hjk.jpeg" alt="">
             </div>
             <div class="voteBlock">
                 <form class="voteForm">
@@ -80,7 +80,7 @@
                             <p class="answerСhoice">${answer.description}<input onclick="answChoise(event)" class="answerForQ_${question.id}" id="answer_${answer.id}" type="radio" name="answer" value="a1"></p>
                         </c:forEach>
                     </div>
-                    <div id="qSubmitWrapper_${question.id}" style="padding: 80px 0 0 0;">
+                    <div class="voiceAllPeople" id="qSubmitWrapper_${question.id}">
                         <input id="qSubmit_${question.id}" onclick="voteNow(event)" class="voteSubmit" type="button" value="Проголосовать">
                     </div>
                 </form>

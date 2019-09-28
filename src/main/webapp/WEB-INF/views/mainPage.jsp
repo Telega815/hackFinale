@@ -87,45 +87,46 @@
     <div class="historyDiv">
         <div class="hist histbordup">
             <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/rub.png" alt="">
                 <span>Почему на банкнотах и монетах Банка России помещен герб Временного правительства 1917 года, а не герб Российской Федерации?</span>
             </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
         </div>
         <div class="hist">
             <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>mxznhxzmhjfsdjhfkj</span>
+                <img src="${pageContext.request.contextPath}/resources/media/finansi.png" alt="">
+                <span>Вправе ли кредитные организации отказывать гражданам в приеме денежных знаков в иностранной валюте, на которых присутствуют штампы, надписи?</span>
             </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
         </div>
         <div class="hist">
             <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>mxznhxzmhjfsdjhfkj</span>
+                <img src="${pageContext.request.contextPath}/resources/media/bank.png" alt="">
+                <span>Что делать при несогласии с размером выплаты по добровольным видам страхования?
+</span>
             </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
         </div>
         <div class="hist">
             <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/rub.png" alt="">
                 <span>mxznhxzmhjfsdjhfkj</span>
             </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
         </div>
         <div class="hist">
             <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/pensii.png" alt="">
                 <span>mxznhxzmhjfsdjhfkj</span>
             </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
         </div>
         <div class="hist histbordbottom">
             <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/finansi.png" alt="">
                 <span>mxznhxzmhjfsdjhfkj</span>
             </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
         </div>
     </div>
 </main>

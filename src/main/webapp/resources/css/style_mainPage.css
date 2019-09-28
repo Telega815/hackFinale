@@ -122,7 +122,7 @@ main{
 .histCent{
     display: flex;
     align-items: center;
-    width: 80vw;
+    width: 90vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

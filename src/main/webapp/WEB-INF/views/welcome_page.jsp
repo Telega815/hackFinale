@@ -18,6 +18,10 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+    <link rel="manifest" href="${pageContext.request.contextPath}/resources/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/man.png">
 </head>
 <body>
     <main>
