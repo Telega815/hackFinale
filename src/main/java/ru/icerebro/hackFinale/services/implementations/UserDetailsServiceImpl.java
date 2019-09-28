@@ -7,8 +7,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.icerebro.hackFinale.dao.interfaces.GroupDAO;
 import ru.icerebro.hackFinale.dao.interfaces.UserDAO;
+import ru.icerebro.hackFinale.dao.interfaces.UserWatchedDAO;
 import ru.icerebro.hackFinale.entities.Group;
 import ru.icerebro.hackFinale.entities.User;
+import ru.icerebro.hackFinale.entities.Userwatched;
+import ru.icerebro.hackFinale.entities.Vote;
 import ru.icerebro.hackFinale.services.interfaces.UserService;
 
 
@@ -20,10 +23,14 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
     private final GroupDAO groupDAO;
 
     @Autowired
-    public UserDetailsServiceImpl(PasswordEncoder passwordEncoder, UserDAO userDAO, GroupDAO groupDAO) {
+    private final UserWatchedDAO userWatchedDAO;
+
+    @Autowired
+    public UserDetailsServiceImpl(PasswordEncoder passwordEncoder, UserDAO userDAO, GroupDAO groupDAO, UserWatchedDAO userWatchedDAO) {
         this.passwordEncoder = passwordEncoder;
         this.userDAO = userDAO;
         this.groupDAO = groupDAO;
+        this.userWatchedDAO = userWatchedDAO;
     }
 
     @Override
@@ -89,5 +96,11 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
     public User getUser(Integer pageOwnerId) {
 
         return userDAO.getUser(pageOwnerId);
+    }
+
+    @Override
+    public Userwatched isWatched(User user, Vote vote) {
+        Userwatched userwatched = userWatchedDAO.getUserWatched(user, vote);
+        return null;
     }
 }
