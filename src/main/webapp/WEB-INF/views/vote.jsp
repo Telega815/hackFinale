@@ -20,9 +20,10 @@
 <jsp:include page="header.jsp"/>
     <main>
         <div style="margin: 45px 0 0 0;">
+            <div class="imgVoteClip">
+                <img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">
+            </div>
         <div class="voteBlock">
-
-            <%--<img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">--%>
             <form class="voteForm" action="handler.php">
                 <p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>
                 <div class="choice">
@@ -38,8 +39,11 @@
             </form>
         </div>
 
+
+            <div class="imgVoteClip">
+                <img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">
+            </div>
         <div class="voteBlock">
-            <%--<img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">--%>
             <form class="voteForm" action="handler.php">
                 <p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>
                 <div class="choice">
@@ -53,9 +57,10 @@
             </form>
         </div>
 
-
+            <div class="imgVoteClip">
+                <img class="voteImg" src="https://f.sravni.ru/cms/KnowledgeBaseArticle/Picture/mat_68584.jpeg" alt="">
+            </div>
         <div class="voteBlock">
-            <%--<img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">--%>
             <form class="voteForm" action="handler.php">
                 <p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>
                 <div class="choice">

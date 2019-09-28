@@ -5,6 +5,7 @@
 main {
     display: flex;
     justify-content: center;
+    background-color: black;
 }
 
 header{
@@ -17,17 +18,15 @@ header{
 }
 .voteBlock{
     display: flex;
-    /* justify-content: center; */
-    margin: 5px 0 0 0;
-    background-color: rebeccapurple;
+    background-color: #272727;
     width: 90vw;
+    border-radius: 0 0 10px 10px;
+    margin: 0 0 10px 0;
 }
 
 .voteImg {
-    /*position: absolute;*/
     width: 90vw;
-    height: 480px;
-    border-radius: 8px;
+    margin: 10px 0 0 0;
 }
 
 .voteForm {
@@ -45,6 +44,7 @@ header{
     font-size: 30px;
     font-weight: bold;
     margin: 0 0 40px 0;
+    font-family: Arial;
 }
 
 .choice {
@@ -57,20 +57,35 @@ header{
     width: 80%;
     display: flex;
     justify-content: space-between;
-    background-color: grey;
-    color: white;
-    font-size: 24px;
+    align-items: center;
+    background-color: #555;
+    color: #eee;
+    font-size: 18px;
     margin: 5px 0;
     padding: 5px 20px;
     border-radius: 5px;
+    font-family: Arial;
 }
 .answerСhoice input {
     font-size: 500px;
 }
 
 .voteSubmit {
-    margin-top: 10px;
     font-size: 20px;
     border-radius: 20px;
     padding: 5px 15px;
+    margin: 10px 0 20px 0;
+    color: #eee;
+    background-color: #4f955b;
+    border: 0;
+    -webkit-appearance: none;
+}
+.imgVoteClip{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 90vw;
+    height: 150px;
+    margin: 20px 0 0 0;
+    border-radius: 10px 10px 0 0;
 }
