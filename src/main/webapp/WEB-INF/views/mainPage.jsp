@@ -28,7 +28,7 @@
             <img src="${pageContext.request.contextPath}/resources/media/user_male.png" alt="">
         </div>
         <div id="search">
-            <input id="searchInput" placeholder="   Поиск">
+            <input id="searchInput" placeholder="          Поиск">
         </div>
         <div id="notification">
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
@@ -38,47 +38,47 @@
     <div class="cat1">
         <div class="cat11"  onclick="location.href='/Category?votecategory=1'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/rub.png" alt="">
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(0)}.png"--%>
                      <%--id="heart_1" class="heart_close"--%>
                      <%--onclick=favoriteCategorySwitch(event);--%>
                      <%--alt="" style="width: 25px; height: 25px;">--%>
             </div>
-            <span>jhdfgjhdfgtfd</span>
+            <span>Национальная валюта</span>
         </div>
         <div class="cat11" onclick="location.href='/Category?votecategory=2'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/pensii.png" alt="">
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(1)}.png"--%>
                      <%--id="heart_2" class="heart_close"--%>
                      <%--onclick=favoriteCategorySwitch(event);--%>
                      <%--alt="" style="width: 25px; height: 25px;">--%>
 
             </div>
-            <span>jhdfgjhdfgtfd</span>
+            <span>Пенсионные отчисления</span>
         </div>
     </div>
     <div class="cat1">
         <div class="cat11" onclick="location.href='/Category?votecategory=3'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/bank.png" alt="">
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(2)}.png"--%>
                      <%--id="heart_3" class="heart_close"--%>
                      <%--onclick=favoriteCategorySwitch(event);--%>
                      <%--alt="" style="width: 25px; height: 25px;">--%>
             </div>
-            <span>jhdfgjhdfgtfd</span>
+            <span>Банки России</span>
         </div>
         <div class="cat11" onclick="location.href='/Category?votecategory=4'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/finansi.png" alt="">
 
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(3)}.png"--%>
                      <%--id="heart_4" class="heart_close"--%>
                      <%--onclick=favoriteCategorySwitch(event);--%>
                      <%--alt="" style="width: 25px; height: 25px;">--%>
             </div>
-            <span>sdfgsdfsdfsdf</span>
+            <span>Финансирование</span>
         </div>
     </div>
     <div id="historySpan">
