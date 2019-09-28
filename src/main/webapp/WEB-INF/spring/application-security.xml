@@ -21,7 +21,7 @@
         </session-management>
         <form-login
                 login-processing-url="/service/loginProcessing"
-                login-page='/service/login'
+                login-page='/'
                 default-target-url="/service/goToUserPage"
                 authentication-failure-url="/sasasasasa"
                 username-parameter="username"

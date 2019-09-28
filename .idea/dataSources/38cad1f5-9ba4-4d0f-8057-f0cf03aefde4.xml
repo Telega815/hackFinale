@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="hackdb@192.168.1.246">
+<dataSource name="hackdb@localhost">
   <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.3">
     <root id="1"/>
     <database id="2" parent="1" name="hackdb">
@@ -12,8 +12,8 @@
     </database>
     <schema id="4" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2019-09-27.22:54:43.333</IntrospectionTimestamp>
-      <IntrospectionStateNumber>564</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-09-28.01:27:34.830</IntrospectionTimestamp>
+      <IntrospectionStateNumber>570</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -57,7 +57,7 @@
     </table>
     <table id="15" parent="4" name="users">
       <ObjectId>16418</ObjectId>
-      <StateNumber>561</StateNumber>
+      <StateNumber>570</StateNumber>
     </table>
     <column id="16" parent="13" name="id">
       <Position>1</Position>
@@ -157,36 +157,41 @@
     </column>
     <column id="32" parent="15" name="phone_number">
       <Position>6</Position>
-      <DataType>integer|0</DataType>
-      <StateNumber>561</StateNumber>
+      <DataType>varchar(15)|0</DataType>
+      <StateNumber>570</StateNumber>
     </column>
-    <index id="33" parent="15" name="users_pkey">
+    <column id="33" parent="15" name="juristic">
+      <Position>7</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>565</StateNumber>
+    </column>
+    <index id="34" parent="15" name="users_pkey">
       <ObjectId>16425</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="34" parent="15" name="users_username_uindex">
+    <index id="35" parent="15" name="users_username_uindex">
       <ObjectId>16432</ObjectId>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="35" parent="15" name="users_email_uindex">
+    <index id="36" parent="15" name="users_email_uindex">
       <ObjectId>16433</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="36" parent="15" name="users_phone_number_uindex">
-      <ObjectId>16434</ObjectId>
+    <index id="37" parent="15" name="users_phone_number_uindex">
+      <ObjectId>16435</ObjectId>
       <ColNames>phone_number</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="37" parent="15" name="users_pkey">
+    <key id="38" parent="15" name="users_pkey">
       <ObjectId>16426</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="38" parent="15" name="users_groups_id_fk">
+    <foreign-key id="39" parent="15" name="users_groups_id_fk">
       <ObjectId>16427</ObjectId>
       <ColNames>group_id</ColNames>
       <RefTableId>16396</RefTableId>
