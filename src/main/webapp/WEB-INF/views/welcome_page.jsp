@@ -26,7 +26,7 @@
             <span class="logoText">Центральный банк<br>Российской Федерации</span>
         </div>
         <c:url value="/service/loginProcessing" var="loginUrl"/>
-        <form:form id="inputForm" action="${loginUrl}" method="post" modelAttribute="user" class="login">
+        <form:form id="inputForm" action="${loginUrl}" method="post" modelAttribute="user" class="login LoginWelPage">
             <form:input path="username" class="loginInputs" placeholder="Имя"/>
             <form:input path="pwd" class="loginInputs" placeholder="Пароль"/>
             <div id="regBlock">
