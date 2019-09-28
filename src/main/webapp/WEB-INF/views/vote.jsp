@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Голосование</title>
@@ -25,14 +27,20 @@
             </div>
         <div class="voteBlock">
             <form class="voteForm" action="handler.php">
-                <p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>
-                <div class="choice">
-                    <p class="answerСhoice">Офицерский состав<input type="radio" name="answer" value="a1"></p>
-                    <p class="answerСhoice">Большой полосатый мух<input type="radio" name="answer" value="a2"></p>
-                    <p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>
-                    <p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>
-                    <p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>
-                </div>
+                <%--<p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>--%>
+                <%--<div class="choice">--%>
+                    <%--<p class="answerСhoice">Офицерский состав<input type="radio" name="answer" value="a1"></p>--%>
+                    <%--<p class="answerСhoice">Большой полосатый мух<input type="radio" name="answer" value="a2"></p>--%>
+                    <%--<p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>--%>
+                    <%--<p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>--%>
+                    <%--<p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>--%>
+                <%--</div>--%>
+                    <p class="question">${questions.get(0).description}</p>
+                    <div class="choice">
+                        <c:forEach items="${answ.values().toArray()[0]}" var="answer" varStatus="status">
+                            <p class="answerСhoice">${answer.description}<input type="radio" name="answer" value="a1"></p>
+                        </c:forEach>
+                    </div>
                 <div style="padding: 80px 0 0 0;">
                     <input class="voteSubmit" type="submit" value="Проголосовать">
                 </div>

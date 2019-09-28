@@ -9,4 +9,6 @@ public interface VoteDAO {
     int saveVote(Vote vote);
     void deleteVote(Vote vote);
     void updateVote(Vote vote);
+
+    Vote getVote(Integer vote);
 }
