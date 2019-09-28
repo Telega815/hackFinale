@@ -22,6 +22,12 @@
     <mapping resource="entities/Authority.hbm.xml"/>
     <mapping resource="entities/Group.hbm.xml"/>
     <mapping resource="entities/User.hbm.xml"/>
+    <mapping resource="entities/Question.hbm.xml"/>
+    <mapping resource="entities/Qpicture.hbm.xml"/>
+    <mapping resource="entities/Answer.hbm.xml"/>
+    <mapping resource="entities/Vote.hbm.xml"/>
+    <mapping resource="entities/UserLikes.hbm.xml"/>
+    <mapping resource="entities/Userwatched.hbm.xml"/>
 
   </session-factory>
 </hibernate-configuration>
