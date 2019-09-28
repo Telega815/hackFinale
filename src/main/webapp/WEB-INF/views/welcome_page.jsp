@@ -29,8 +29,10 @@
         <form:form id="inputForm" action="${loginUrl}" method="post" modelAttribute="user" class="login">
             <form:input path="username" class="loginInputs" placeholder="Имя"/>
             <form:input path="pwd" class="loginInputs" placeholder="Пароль"/>
-            <input class="signUp" type="submit" value="Войти">
-            <input class="signUp" type="button" value="Зарегестрироваться" onclick="location.href='/service/registration'">
+            <div>
+                <input class="signUp" type="submit" value="Войти">
+                <input class="signUp" type="button" value="Зарегестрироваться" onclick="location.href='/service/registration'">
+            </div>
         </form:form>
     </main>
 </body>
