@@ -10,4 +10,6 @@ public interface UserLikesDAO {
     int saveUserLikes(UserLikes UserLikes);
     void deleteUserLikes(UserLikes userLikes);
     void updateUserLikes(UserLikes userLikes);
+
+    UserLikes getUserLikes(User loggedInUser, Integer heart);
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ru.icerebro.hackFinale.JSON.JsonVote;
 import ru.icerebro.hackFinale.JSON.JsonVoteList;
 import ru.icerebro.hackFinale.entities.User;
+import ru.icerebro.hackFinale.entities.UserLikes;
 import ru.icerebro.hackFinale.services.interfaces.UserService;
 import ru.icerebro.hackFinale.services.interfaces.VoteService;
 
@@ -31,7 +32,7 @@ public class RestController {
 
     @GetMapping(value = "/restService/getVotes")
     @ResponseBody
-    public JsonVoteList restorePost(HttpSession session,
+    public JsonVoteList getVotes(HttpSession session,
                                 @RequestParam(value = "votecategory") Integer votecategory,
                                 HttpServletRequest request,
                                 HttpServletResponse response){
@@ -48,4 +49,26 @@ public class RestController {
         }
     }
 
+    @GetMapping(value = "/restService/toggleHeart")
+    @ResponseBody
+    public int toggleHeart(HttpSession session,
+                                    @RequestParam(value = "heart") Integer heart,
+                                    HttpServletRequest request,
+                                    HttpServletResponse response){
+
+        String userName;
+
+        if (request.getUserPrincipal() != null){
+            userName = request.getUserPrincipal().getName();
+            User loggedInUser = userService.getUser(userName);
+            UserLikes userLikes = userService.toggleHeart(loggedInUser, heart);
+            if (userLikes == null)
+                return 0;
+            else
+                return 1;
+        }else {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return -1;
+        }
+    }
 }

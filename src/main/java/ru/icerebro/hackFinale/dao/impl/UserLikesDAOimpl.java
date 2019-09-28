@@ -46,4 +46,20 @@ public class UserLikesDAOimpl implements UserLikesDAO {
     public void updateUserLikes(UserLikes userLikes) {
         sessionFactory.getCurrentSession().delete(userLikes);
     }
+
+    @Override
+    @Transactional
+    public UserLikes getUserLikes(User loggedInUser, Integer heart) {
+        List<UserLikes> list = sessionFactory.getCurrentSession()
+                .createQuery("from UserLikes where user=:user and votecategory=:heart")
+                .setParameter("user", loggedInUser)
+                .setParameter("heart", heart)
+                .list();
+
+        if (list == null || list.isEmpty()){
+            return null;
+        }else {
+            return list.get(0);
+        }
+    }
 }

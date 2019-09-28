@@ -7,12 +7,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ru.icerebro.hackFinale.dao.interfaces.GroupDAO;
 import ru.icerebro.hackFinale.dao.interfaces.UserDAO;
+import ru.icerebro.hackFinale.dao.interfaces.UserLikesDAO;
 import ru.icerebro.hackFinale.dao.interfaces.UserWatchedDAO;
-import ru.icerebro.hackFinale.entities.Group;
-import ru.icerebro.hackFinale.entities.User;
-import ru.icerebro.hackFinale.entities.Userwatched;
-import ru.icerebro.hackFinale.entities.Vote;
+import ru.icerebro.hackFinale.entities.*;
 import ru.icerebro.hackFinale.services.interfaces.UserService;
+
+import java.util.List;
 
 
 public class UserDetailsServiceImpl implements UserDetailsService, UserService {
@@ -22,15 +22,17 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
 
     private final GroupDAO groupDAO;
 
-    @Autowired
     private final UserWatchedDAO userWatchedDAO;
 
+    private final UserLikesDAO userLikesDAO;
+
     @Autowired
-    public UserDetailsServiceImpl(PasswordEncoder passwordEncoder, UserDAO userDAO, GroupDAO groupDAO, UserWatchedDAO userWatchedDAO) {
+    public UserDetailsServiceImpl(PasswordEncoder passwordEncoder, UserDAO userDAO, GroupDAO groupDAO, UserWatchedDAO userWatchedDAO, UserLikesDAO userLikesDAO) {
         this.passwordEncoder = passwordEncoder;
         this.userDAO = userDAO;
         this.groupDAO = groupDAO;
         this.userWatchedDAO = userWatchedDAO;
+        this.userLikesDAO = userLikesDAO;
     }
 
     @Override
@@ -63,6 +65,16 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
             user.setGroup(group);
             userDAO.saveUser(user);
         }
+
+
+//        for (int i = 1; i < 5; i++) {
+//            UserLikes userLikes = new UserLikes();
+//            userLikes.setUser(user);
+//            userLikes.setVotecategory(i);
+//            userLikes.setLike(false);
+//            userLikesDAO.saveUserLikes(userLikes);
+//        }
+
     }
 
     @Override
@@ -101,6 +113,45 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
     @Override
     public Userwatched isWatched(User user, Vote vote) {
         Userwatched userwatched = userWatchedDAO.getUserWatched(user, vote);
+        return userwatched;
+    }
+
+    @Override
+    public UserLikes toggleHeart(User loggedInUser, Integer heart) {
+//        UserLikes userLikes = userLikesDAO.getUserLikes(loggedInUser, heart);
+//        if (userLikes == null){
+//
+//            userLikes = new UserLikes();
+//            userLikes.setUser(loggedInUser);
+//            userLikes.setVotecategory(heart);
+//            userLikes.setLike(true);
+//            userLikesDAO.saveUserLikes(userLikes);
+//
+//            return userLikes;
+//        }else {
+//
+//            boolean like = !userLikes.getLike();
+//
+//            userLikesDAO.deleteUserLikes(userLikes);
+//
+//            userLikes = new UserLikes();
+//            userLikes.setUser(loggedInUser);
+//            userLikes.setVotecategory(heart);
+//            userLikes.setLike(like);
+//
+//            userLikesDAO.saveUserLikes(userLikes);
+//
+//            return userLikes;
+//        }
         return null;
+    }
+
+    @Override
+    public List<UserLikes> getUserLikes(String name) {
+        User user = userDAO.getUser(name);
+        if (user == null)
+            return null;
+
+        return userLikesDAO.getUserLikes(user);
     }
 }

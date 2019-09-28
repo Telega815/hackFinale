@@ -12,8 +12,8 @@
     </database>
     <schema id="4" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2019-09-28.11:59:20.269</IntrospectionTimestamp>
-      <IntrospectionStateNumber>585</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-09-28.16:03:07.187</IntrospectionTimestamp>
+      <IntrospectionStateNumber>601</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -32,44 +32,44 @@
     <schema id="9" parent="2" name="information_schema">
       <ObjectId>12648</ObjectId>
     </schema>
-    <sequence id="10" parent="4" name="userwatched_id_seq">
-      <ObjectId>16511</ObjectId>
-      <StateNumber>585</StateNumber>
-      <BelongsToColumn>1</BelongsToColumn>
-    </sequence>
-    <sequence id="11" parent="4" name="answers_id_seq">
+    <sequence id="10" parent="4" name="answers_id_seq">
       <ObjectId>16465</ObjectId>
       <StateNumber>574</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="12" parent="4" name="group_authorities_id_seq">
+    <sequence id="11" parent="4" name="group_authorities_id_seq">
       <ObjectId>16403</ObjectId>
       <StateNumber>560</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="13" parent="4" name="groups_id_seq">
+    <sequence id="12" parent="4" name="groups_id_seq">
       <ObjectId>16394</ObjectId>
       <StateNumber>558</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="14" parent="4" name="qpictures_id_seq">
+    <sequence id="13" parent="4" name="qpictures_id_seq">
       <ObjectId>16484</ObjectId>
       <StateNumber>579</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="15" parent="4" name="questions_id_seq">
+    <sequence id="14" parent="4" name="questions_id_seq">
       <ObjectId>16454</ObjectId>
       <StateNumber>573</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="16" parent="4" name="user_likes_id_seq">
+    <sequence id="15" parent="4" name="user_likes_id_seq">
       <ObjectId>16498</ObjectId>
       <StateNumber>584</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
-    <sequence id="17" parent="4" name="users_id_seq">
+    <sequence id="16" parent="4" name="users_id_seq">
       <ObjectId>16416</ObjectId>
       <StateNumber>561</StateNumber>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="17" parent="4" name="userwatched_id_seq">
+      <ObjectId>16511</ObjectId>
+      <StateNumber>585</StateNumber>
       <BelongsToColumn>1</BelongsToColumn>
     </sequence>
     <sequence id="18" parent="4" name="votes_id_seq">
@@ -99,7 +99,7 @@
     </table>
     <table id="24" parent="4" name="user_likes">
       <ObjectId>16500</ObjectId>
-      <StateNumber>584</StateNumber>
+      <StateNumber>601</StateNumber>
     </table>
     <table id="25" parent="4" name="users">
       <ObjectId>16418</ObjectId>
@@ -318,18 +318,24 @@
       <DataType>integer|0</DataType>
       <StateNumber>584</StateNumber>
     </column>
-    <index id="61" parent="24" name="user_likes_pkey">
+    <column id="61" parent="24" name="like">
+      <Position>4</Position>
+      <DataType>boolean|0</DataType>
+      <StateNumber>601</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+    </column>
+    <index id="62" parent="24" name="user_likes_pkey">
       <ObjectId>16504</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="62" parent="24" name="user_likes_pkey">
+    <key id="63" parent="24" name="user_likes_pkey">
       <ObjectId>16505</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_likes_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="63" parent="24" name="user_likes_users_id_fk">
+    <foreign-key id="64" parent="24" name="user_likes_users_id_fk">
       <ObjectId>16506</ObjectId>
       <ColNames>userid</ColNames>
       <RefTableId>16418</RefTableId>
@@ -338,7 +344,7 @@
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="64" parent="25" name="id">
+    <column id="65" parent="25" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -346,64 +352,64 @@
       <SequenceName>users_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="65" parent="25" name="username">
+    <column id="66" parent="25" name="username">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <StateNumber>561</StateNumber>
     </column>
-    <column id="66" parent="25" name="pwd">
+    <column id="67" parent="25" name="pwd">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>561</StateNumber>
     </column>
-    <column id="67" parent="25" name="group_id">
+    <column id="68" parent="25" name="group_id">
       <Position>4</Position>
       <DataType>integer|0</DataType>
       <StateNumber>561</StateNumber>
     </column>
-    <column id="68" parent="25" name="email">
+    <column id="69" parent="25" name="email">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>561</StateNumber>
     </column>
-    <column id="69" parent="25" name="phone_number">
+    <column id="70" parent="25" name="phone_number">
       <Position>6</Position>
       <DataType>varchar(15)|0</DataType>
       <StateNumber>570</StateNumber>
     </column>
-    <column id="70" parent="25" name="juristic">
+    <column id="71" parent="25" name="juristic">
       <Position>7</Position>
       <DataType>boolean|0</DataType>
       <StateNumber>565</StateNumber>
     </column>
-    <index id="71" parent="25" name="users_pkey">
+    <index id="72" parent="25" name="users_pkey">
       <ObjectId>16425</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="72" parent="25" name="users_username_uindex">
+    <index id="73" parent="25" name="users_username_uindex">
       <ObjectId>16432</ObjectId>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="73" parent="25" name="users_email_uindex">
+    <index id="74" parent="25" name="users_email_uindex">
       <ObjectId>16433</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="74" parent="25" name="users_phone_number_uindex">
+    <index id="75" parent="25" name="users_phone_number_uindex">
       <ObjectId>16435</ObjectId>
       <ColNames>phone_number</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="75" parent="25" name="users_pkey">
+    <key id="76" parent="25" name="users_pkey">
       <ObjectId>16426</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="76" parent="25" name="users_groups_id_fk">
+    <foreign-key id="77" parent="25" name="users_groups_id_fk">
       <ObjectId>16427</ObjectId>
       <ColNames>group_id</ColNames>
       <RefTableId>16396</RefTableId>
@@ -412,7 +418,7 @@
       <RefKeyName>groups_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="77" parent="26" name="id">
+    <column id="78" parent="26" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -420,28 +426,28 @@
       <SequenceName>userwatched_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;userwatched_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="78" parent="26" name="userid">
+    <column id="79" parent="26" name="userid">
       <Position>2</Position>
       <DataType>integer|0</DataType>
       <StateNumber>585</StateNumber>
     </column>
-    <column id="79" parent="26" name="vote">
+    <column id="80" parent="26" name="vote">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <StateNumber>585</StateNumber>
     </column>
-    <index id="80" parent="26" name="userwatched_pkey">
+    <index id="81" parent="26" name="userwatched_pkey">
       <ObjectId>16517</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="81" parent="26" name="userwatched_pkey">
+    <key id="82" parent="26" name="userwatched_pkey">
       <ObjectId>16518</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>userwatched_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="82" parent="26" name="userwatched_users_id_fk">
+    <foreign-key id="83" parent="26" name="userwatched_users_id_fk">
       <ObjectId>16519</ObjectId>
       <ColNames>userid</ColNames>
       <RefTableId>16418</RefTableId>
@@ -450,7 +456,7 @@
       <RefKeyName>users_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="83" parent="26" name="userwatched_votes_id_fk">
+    <foreign-key id="84" parent="26" name="userwatched_votes_id_fk">
       <ObjectId>16524</ObjectId>
       <ColNames>vote</ColNames>
       <RefTableId>16448</RefTableId>
@@ -459,7 +465,7 @@
       <RefKeyName>votes_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="84" parent="27" name="id">
+    <column id="85" parent="27" name="id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -467,28 +473,28 @@
       <SequenceName>votes_id_seq</SequenceName>
       <DefaultExpression>nextval(&apos;votes_id_seq&apos;::regclass)</DefaultExpression>
     </column>
-    <column id="85" parent="27" name="votename">
+    <column id="86" parent="27" name="votename">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <StateNumber>572</StateNumber>
     </column>
-    <column id="86" parent="27" name="votecategory">
+    <column id="87" parent="27" name="votecategory">
       <Position>3</Position>
       <DataType>integer|0</DataType>
       <StateNumber>582</StateNumber>
     </column>
-    <column id="87" parent="27" name="closed">
+    <column id="88" parent="27" name="closed">
       <Position>4</Position>
       <DataType>boolean|0</DataType>
       <StateNumber>583</StateNumber>
       <DefaultExpression>false</DefaultExpression>
     </column>
-    <index id="88" parent="27" name="votes_pkey">
+    <index id="89" parent="27" name="votes_pkey">
       <ObjectId>16452</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="89" parent="27" name="votes_pkey">
+    <key id="90" parent="27" name="votes_pkey">
       <ObjectId>16453</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>votes_pkey</UnderlyingIndexName>

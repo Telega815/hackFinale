@@ -4,6 +4,7 @@ public class UserLikes {
     private int id;
     private User user;
     private Integer votecategory;
+    private Boolean like;
 
     public int getId() {
         return id;
@@ -50,5 +51,13 @@ public class UserLikes {
         result = 31 * result + (user != null ? user.hashCode() : 0);
         result = 31 * result + (votecategory != null ? votecategory.hashCode() : 0);
         return result;
+    }
+
+    public Boolean getLike() {
+        return like;
+    }
+
+    public void setLike(Boolean like) {
+        this.like = like;
     }
 }
