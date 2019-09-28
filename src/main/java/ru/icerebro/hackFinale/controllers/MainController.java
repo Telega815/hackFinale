@@ -65,6 +65,27 @@ public class MainController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("mainPage");
 
+//        List<UserLikes> list = userService.getUserLikes(request.getUserPrincipal().getName());
+//
+//        List<String> strings = new ArrayList<String>(4);
+//
+//        list.sort((o1, o2) -> {
+//            if (o1.getVotecategory() < o2.getVotecategory())
+//                return -1;
+//            else if (Objects.equals(o1.getVotecategory(), o2.getVotecategory()))
+//                return 0;
+//            else
+//                return 1;
+//        });
+//        for (UserLikes like: list) {
+//            if (like.getLike())
+//                strings.add("like_close");
+//            else
+//                strings.add("like_open");
+//        }
+//
+//        modelAndView.addObject("likes", strings);
+
         return modelAndView;
     }
 

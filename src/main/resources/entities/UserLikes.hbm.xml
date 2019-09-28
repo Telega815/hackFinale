@@ -12,5 +12,6 @@
             <column name="userid"/>
         </many-to-one>
         <property name="votecategory" column="votecategory"/>
+        <property name="like" column="like"/>
     </class>
 </hibernate-mapping>

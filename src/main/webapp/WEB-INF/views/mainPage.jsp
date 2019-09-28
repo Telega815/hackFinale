@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: gur01
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Главная</title>
@@ -16,6 +18,9 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style_mainPage.css">
+
+    <script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/mainPageScripts.js"></script>
 </head>
 <body>
     <header>
@@ -34,14 +39,21 @@
         <div class="cat11"  onclick="location.href='/Category?votecategory=1'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/like_open.png" alt="" style="width: 25px; height: 25px;">
+                <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(0)}.png"--%>
+                     <%--id="heart_1" class="heart_close"--%>
+                     <%--onclick=favoriteCategorySwitch(event);--%>
+                     <%--alt="" style="width: 25px; height: 25px;">--%>
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
         <div class="cat11" onclick="location.href='/Category?votecategory=2'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/like_close.png" alt="" style="width: 25px; height: 25px;">
+                <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(1)}.png"--%>
+                     <%--id="heart_2" class="heart_close"--%>
+                     <%--onclick=favoriteCategorySwitch(event);--%>
+                     <%--alt="" style="width: 25px; height: 25px;">--%>
+
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
@@ -50,14 +62,21 @@
         <div class="cat11" onclick="location.href='/Category?votecategory=3'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/like_close.png" alt="" style="width: 25px; height: 25px;">
+                <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(2)}.png"--%>
+                     <%--id="heart_3" class="heart_close"--%>
+                     <%--onclick=favoriteCategorySwitch(event);--%>
+                     <%--alt="" style="width: 25px; height: 25px;">--%>
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
         <div class="cat11" onclick="location.href='/Category?votecategory=4'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/like_open.png" alt="" style="width: 25px; height: 25px;">
+
+                <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(3)}.png"--%>
+                     <%--id="heart_4" class="heart_close"--%>
+                     <%--onclick=favoriteCategorySwitch(event);--%>
+                     <%--alt="" style="width: 25px; height: 25px;">--%>
             </div>
             <span>sdfgsdfsdfsdf</span>
         </div>
