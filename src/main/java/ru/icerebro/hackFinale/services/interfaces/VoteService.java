@@ -13,4 +13,6 @@ public interface VoteService {
     List<Question> getQuestion(Integer vote);
 
     List<Answer> getAnswers(Question q);
+
+    void voteNow(User loggedInUser, Integer qId, Integer answ);
 }

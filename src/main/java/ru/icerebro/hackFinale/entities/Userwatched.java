@@ -3,7 +3,7 @@ package ru.icerebro.hackFinale.entities;
 public class Userwatched {
     private int id;
     private User user;
-    private Vote vote;
+    private Question question;
 
     public int getId() {
         return id;
@@ -21,12 +21,12 @@ public class Userwatched {
         this.user = user;
     }
 
-    public Vote getVote() {
-        return vote;
+    public Question getQuestion() {
+        return question;
     }
 
-    public void setVote(Vote vote) {
-        this.vote = vote;
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class Userwatched {
 
         if (id != that.id) return false;
         if (user != null ? !user.equals(that.user) : that.user != null) return false;
-        if (vote != null ? !vote.equals(that.vote) : that.vote != null) return false;
+        if (question != null ? !question.equals(that.question) : that.question != null) return false;
 
         return true;
     }
@@ -47,7 +47,7 @@ public class Userwatched {
     public int hashCode() {
         int result = id;
         result = 31 * result + (user != null ? user.hashCode() : 0);
-        result = 31 * result + (vote != null ? vote.hashCode() : 0);
+        result = 31 * result + (question != null ? question.hashCode() : 0);
         return result;
     }
 }

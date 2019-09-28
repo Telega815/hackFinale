@@ -14,6 +14,7 @@ import ru.icerebro.hackFinale.entities.Vote;
 import ru.icerebro.hackFinale.services.interfaces.UserService;
 import ru.icerebro.hackFinale.services.interfaces.VoteService;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +24,6 @@ public class MainController {
 
     private final UserService userService;
 
-    @Autowired
     private final VoteService voteService;
 
     @Autowired
@@ -110,12 +110,18 @@ public class MainController {
         modelAndView.setViewName("vote");
 
         List<Question> questions = voteService.getQuestion(vote);
+
+        questions.sort((o1, o2) -> Integer.compare(o2.getId(), o1.getId()));
+
         modelAndView.addObject("questions", questions);
 
         Map<Integer, List<Answer>> map = new HashMap<>();
 
         for (Question q:questions) {
             List<Answer> answers = voteService.getAnswers(q);
+
+            answers.sort(Comparator.comparingInt(Answer::getId));
+
             map.put(q.getId(), answers);
         }
 

@@ -71,4 +71,25 @@ public class RestController {
             return -1;
         }
     }
+
+    @GetMapping(value = "/restService/VoteNow")
+    @ResponseBody
+    public int toggleHeart(HttpSession session,
+                           @RequestParam(value = "qId") Integer qId,
+                           @RequestParam(value = "answ") Integer answ,
+                           HttpServletRequest request,
+                           HttpServletResponse response){
+
+        String userName;
+
+        if (request.getUserPrincipal() != null){
+            userName = request.getUserPrincipal().getName();
+            User loggedInUser = userService.getUser(userName);
+            voteService.voteNow(loggedInUser, qId, answ);
+            return 0;
+        }else {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return -1;
+        }
+    }
 }

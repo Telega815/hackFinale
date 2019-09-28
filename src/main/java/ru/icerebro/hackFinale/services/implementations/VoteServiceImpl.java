@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.icerebro.hackFinale.dao.interfaces.AnswerDAO;
 import ru.icerebro.hackFinale.dao.interfaces.QuestionDAO;
+import ru.icerebro.hackFinale.dao.interfaces.UserWatchedDAO;
 import ru.icerebro.hackFinale.dao.interfaces.VoteDAO;
-import ru.icerebro.hackFinale.entities.Answer;
-import ru.icerebro.hackFinale.entities.Question;
-import ru.icerebro.hackFinale.entities.Vote;
+import ru.icerebro.hackFinale.entities.*;
 import ru.icerebro.hackFinale.services.interfaces.VoteService;
 
 import java.util.List;
@@ -21,11 +20,14 @@ public class VoteServiceImpl implements VoteService {
 
     private final AnswerDAO answerDAO;
 
+    private final UserWatchedDAO userWatchedDAO;
+
     @Autowired
-    public VoteServiceImpl(VoteDAO voteDAO, QuestionDAO questionDAO, AnswerDAO answerDAO) {
+    public VoteServiceImpl(VoteDAO voteDAO, QuestionDAO questionDAO, AnswerDAO answerDAO, UserWatchedDAO userWatchedDAO) {
         this.voteDAO = voteDAO;
         this.questionDAO = questionDAO;
         this.answerDAO = answerDAO;
+        this.userWatchedDAO = userWatchedDAO;
     }
 
     @Override
@@ -42,5 +44,18 @@ public class VoteServiceImpl implements VoteService {
     @Override
     public List<Answer> getAnswers(Question q) {
         return answerDAO.getAnswers(q);
+    }
+
+    @Override
+    public void voteNow(User loggedInUser, Integer qId, Integer answ) {
+        Question question = questionDAO.getQuestions(qId);
+        Answer answer = answerDAO.getAnswers(answ);
+        answer.setVotecount(answer.getVotecount() + 1);
+        answerDAO.updateAnswer(answer);
+
+        Userwatched userwatched = new Userwatched();
+        userwatched.setUser(loggedInUser);
+        userwatched.setQuestion(question);
+        userWatchedDAO.saveUserWatched(userwatched);
     }
 }

@@ -17,70 +17,69 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/vote.css">
+    <script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/VoteScripts.js"></script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
     <main>
         <div style="margin: 45px 0 0 0;">
+
+
+        <c:forEach items="${questions}" var="question" varStatus="status">
+
             <div class="imgVoteClip">
                 <img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">
             </div>
         <div class="voteBlock">
             <form class="voteForm" action="handler.php">
+                    <p class="question">${question.description}</p>
+                    <div class="choice">
+                        <c:forEach items="${answ.values().toArray()[question.id-1]}" var="answer" varStatus="status">
+                            <p class="answerСhoice">${answer.description}<input onclick="answChoise(event)" class="answerForQ_${question.id}" id="answer_${answer.id}" type="radio" name="answer" value="a1"></p>
+                        </c:forEach>
+                    </div>
+                <div style="padding: 80px 0 0 0;">
+                    <input id="qSubmit_${question.id}" onclick="voteNow(event)" class="voteSubmit" type="button" value="Проголосовать">
+                </div>
+            </form>
+        </div>
+
+    </c:forEach>
+
+            <%--<div class="imgVoteClip">--%>
+                <%--<img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">--%>
+            <%--</div>--%>
+        <%--<div class="voteBlock">--%>
+            <%--<form class="voteForm" action="handler.php">--%>
                 <%--<p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>--%>
                 <%--<div class="choice">--%>
                     <%--<p class="answerСhoice">Офицерский состав<input type="radio" name="answer" value="a1"></p>--%>
                     <%--<p class="answerСhoice">Большой полосатый мух<input type="radio" name="answer" value="a2"></p>--%>
                     <%--<p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>--%>
-                    <%--<p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>--%>
+                <%--</div>--%>
+                <%--<div style="padding: 80px 0 0 0;">--%>
+                    <%--<input class="voteSubmit" type="submit" value="Проголосовать">--%>
+                <%--</div>--%>
+            <%--</form>--%>
+        <%--</div>--%>
+
+            <%--<div class="imgVoteClip">--%>
+                <%--<img class="voteImg" src="https://f.sravni.ru/cms/KnowledgeBaseArticle/Picture/mat_68584.jpeg" alt="">--%>
+            <%--</div>--%>
+        <%--<div class="voteBlock">--%>
+            <%--<form class="voteForm" action="handler.php">--%>
+                <%--<p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>--%>
+                <%--<div class="choice">--%>
+                    <%--<p class="answerСhoice">Офицерский состав<input type="radio" name="answer" value="a1"></p>--%>
+                    <%--<p class="answerСhoice">Большой полосатый мух<input type="radio" name="answer" value="a2"></p>--%>
                     <%--<p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>--%>
                 <%--</div>--%>
-                    <p class="question">${questions.get(0).description}</p>
-                    <div class="choice">
-                        <c:forEach items="${answ.values().toArray()[0]}" var="answer" varStatus="status">
-                            <p class="answerСhoice">${answer.description}<input type="radio" name="answer" value="a1"></p>
-                        </c:forEach>
-                    </div>
-                <div style="padding: 80px 0 0 0;">
-                    <input class="voteSubmit" type="submit" value="Проголосовать">
-                </div>
-            </form>
-        </div>
-
-
-            <div class="imgVoteClip">
-                <img class="voteImg" src="https://live.staticflickr.com/8043/8120326424_39a89602a5_b.jpg" alt="">
-            </div>
-        <div class="voteBlock">
-            <form class="voteForm" action="handler.php">
-                <p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>
-                <div class="choice">
-                    <p class="answerСhoice">Офицерский состав<input type="radio" name="answer" value="a1"></p>
-                    <p class="answerСhoice">Большой полосатый мух<input type="radio" name="answer" value="a2"></p>
-                    <p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>
-                </div>
-                <div style="padding: 80px 0 0 0;">
-                    <input class="voteSubmit" type="submit" value="Проголосовать">
-                </div>
-            </form>
-        </div>
-
-            <div class="imgVoteClip">
-                <img class="voteImg" src="https://f.sravni.ru/cms/KnowledgeBaseArticle/Picture/mat_68584.jpeg" alt="">
-            </div>
-        <div class="voteBlock">
-            <form class="voteForm" action="handler.php">
-                <p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>
-                <div class="choice">
-                    <p class="answerСhoice">Офицерский состав<input type="radio" name="answer" value="a1"></p>
-                    <p class="answerСhoice">Большой полосатый мух<input type="radio" name="answer" value="a2"></p>
-                    <p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>
-                </div>
-                <div style="padding: 80px 0 0 0;">
-                    <input class="voteSubmit" type="submit" value="Проголосовать">
-                </div>
-            </form>
-        </div>
+                <%--<div style="padding: 80px 0 0 0;">--%>
+                    <%--<input class="voteSubmit" type="submit" value="Проголосовать">--%>
+                <%--</div>--%>
+            <%--</form>--%>
+        <%--</div>--%>
         </div>
     </main>
 </body>
