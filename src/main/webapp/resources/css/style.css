@@ -7,7 +7,9 @@
     font-size: 0;
 }
 body{
-    background-color: black;
+    /*background-color: black; */
+    background-image: linear-gradient(rgba(0,0,0,.9), rgba(0,0,0,.9)),url(../media/fon.jpg);
+    background-position: center;
 }
 main {
     display: flex;
@@ -64,14 +66,14 @@ main {
     width: 55vw;
     height: 40px;
     color: #eee;
-    background-color: green;
+    background-color: #4f955b;
     font-size: 18px;
     font-family: Arial;
     margin: 50px 0 0 0;
     -webkit-appearance: none;
 }
 .regUp{
-    background-color: black;
+    background-color: rgba(0,0,0,0);
     font-size: 16px;
     margin-top: 20px;
     color: #4487f0;
