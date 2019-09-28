@@ -1,0 +1,21 @@
+{
+
+  "name": "cbr3",
+
+  "short_name": "cbr3",
+
+  "start_url": "/",
+
+  "display": "standalone",
+
+  "icons": [{
+
+    "src": "man.png",
+
+    "sizes": "192x192",
+
+    "type": "image/png"
+
+  }]
+
+}

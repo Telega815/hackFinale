@@ -22,7 +22,7 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://10.70.10.65:5432/hackdb"/>
+        <property name="url" value="jdbc:postgresql://192.168.1.246:5432/hackdb"/>
         <property name="username" value="postgres"/>
         <property name="password" value="563453"/>
     </bean>
