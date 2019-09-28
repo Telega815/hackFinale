@@ -31,14 +31,14 @@
     </header>
 <main>
     <div class="cat1">
-        <div class="cat11">
+        <div class="cat11"  onclick="location.href='/Category?votecategory=1'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
                 <img src="${pageContext.request.contextPath}/resources/media/like_open.png" alt="" style="width: 25px; height: 25px;">
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
-        <div class="cat11">
+        <div class="cat11" onclick="location.href='/Category?votecategory=2'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
                 <img src="${pageContext.request.contextPath}/resources/media/like_close.png" alt="" style="width: 25px; height: 25px;">
@@ -47,14 +47,14 @@
         </div>
     </div>
     <div class="cat1">
-        <div class="cat11">
+        <div class="cat11" onclick="location.href='/Category?votecategory=3'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
                 <img src="${pageContext.request.contextPath}/resources/media/like_close.png" alt="" style="width: 25px; height: 25px;">
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
-        <div class="cat11">
+        <div class="cat11" onclick="location.href='/Category?votecategory=4'">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
                 <img src="${pageContext.request.contextPath}/resources/media/like_open.png" alt="" style="width: 25px; height: 25px;">

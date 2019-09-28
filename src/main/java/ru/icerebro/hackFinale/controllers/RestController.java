@@ -20,7 +20,6 @@ public class RestController {
 
     private final UserService userService;
 
-    @Autowired
     private final VoteService voteService;
 
     @Autowired
