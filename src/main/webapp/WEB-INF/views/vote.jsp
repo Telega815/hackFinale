@@ -64,12 +64,17 @@
             <form class="voteForm" action="handler.php">
                 <p class="question">Как по вашему мнению расшифровывается аббревиатура &quot;ОС&quot;?</p>
                 <div class="choice">
-                    <p class="answerСhoice">Офицерский состав<input type="radio" name="answer" value="a1"></p>
+                    <p class="answerСhoice" style="background: linear-gradient(to right, rgb(79,149,71) 42%, rgb(56,56,56) 42%);">
+                        Офицерский состав
+                        <span>42%</span>
+                        <%--<input type="radio" name="answer" value="a1">--%>
+                    </p>
                     <p class="answerСhoice">Большой полосатый мух<input type="radio" name="answer" value="a2"></p>
                     <p class="answerСhoice">Операционная система<input type="radio" name="answer" value="a3"></p>
                 </div>
-                <div style="padding: 80px 0 0 0;">
+                <div class="voiceAllPeople">
                     <input class="voteSubmit" type="submit" value="Проголосовать">
+                    <span>Проголосовали 57 человек</span>
                 </div>
             </form>
         </div>
