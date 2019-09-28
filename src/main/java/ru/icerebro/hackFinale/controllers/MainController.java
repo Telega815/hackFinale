@@ -32,7 +32,7 @@ public class MainController {
     public ModelAndView welcomePage() {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("welcome_page");
+        modelAndView.setViewName("vote");
 
         User user = new User();
         modelAndView.addObject("user", user);

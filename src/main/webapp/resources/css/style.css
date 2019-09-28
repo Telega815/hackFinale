@@ -37,23 +37,67 @@ main {
 
 .login {
     width: 100%;
-    margin-top: 150px;
+    margin: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LoginWelPage{
+    width: 100%;
+    margin: 80px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .loginInputs {
+    width: 60vw;
     margin-top: 10px;
     font-size: 18px;
-    color: black;
-    /* border: 1px solid black; */
+    color: #eee;
     padding: 5px 10px;
     border-radius: 5px;
 }
 
-.signUp {
-    font-size: 30px;
+.signUpReg {
+    width: 55vw;
+    height: 40px;
+    color: #eee;
+    background-color: green;
+    font-size: 18px;
+    font-family: Arial;
+    margin: 50px 0 0 0;
+    -webkit-appearance: none;
+}
+.regUp{
+    background-color: black;
+    font-size: 16px;
     margin-top: 20px;
-    color: blue;
+    color: #4487f0;
+    font-family: Arial;
+    -webkit-appearance: none;
+}
+.regUpGo{
+    font-size: 20px;
+    color: #eee;
+    background-color: #4f955b;
+    padding: 5px;
+    margin-top: 20px;
+    font-family: Arial;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+#regBlock{
+    width: 56vw;
+    display: flex;
+    justify-content: space-between;
+}
+.loginTittle{
+    font-size: 50px;
+    color: #eee;
+    line-height: 150px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
 }

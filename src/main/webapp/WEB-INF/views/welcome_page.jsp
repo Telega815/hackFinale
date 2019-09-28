@@ -26,12 +26,12 @@
             <span class="logoText">Центральный банк<br>Российской Федерации</span>
         </div>
         <c:url value="/service/loginProcessing" var="loginUrl"/>
-        <form:form id="inputForm" action="${loginUrl}" method="post" modelAttribute="user" class="login">
+        <form:form id="inputForm" action="${loginUrl}" method="post" modelAttribute="user" class="login LoginWelPage">
             <form:input path="username" class="loginInputs" placeholder="Имя"/>
             <form:input path="pwd" class="loginInputs" placeholder="Пароль"/>
-            <div>
-                <input class="signUp" type="submit" value="Войти">
-                <input class="signUp" type="button" value="Зарегестрироваться" onclick="location.href='/service/registration'">
+            <div id="regBlock">
+                <input class="signUp regUp" type="button" value="Зарегестрироваться" onclick="location.href='/service/registration'">
+                <input class="signUp regUpGo" type="submit" value="Войти">
             </div>
         </form:form>
     </main>
