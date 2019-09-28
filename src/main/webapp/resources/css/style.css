@@ -6,6 +6,9 @@
     border: 0;
     font-size: 0;
 }
+body{
+    background-color: black;
+}
 main {
     display: flex;
     flex-direction: column;
@@ -28,7 +31,8 @@ main {
 
 .logoText {
     font-size: 30px;
-    color: black;
+    color: #eee;
+    font-family: Arial;
 }
 
 .login {
@@ -41,10 +45,11 @@ main {
 
 .loginInputs {
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 18px;
     color: black;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .signUp {

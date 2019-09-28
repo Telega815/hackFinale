@@ -26,8 +26,10 @@
         <form class="login">
             <input class="loginInputs" placeholder="Имя">
             <input class="loginInputs" placeholder="Пароль">
-            <input class="signUp" type="button" value="Войти">
-            <input class="signUp" type="button" value="Зарегестрироваться" onclick="location.href='/registration'">
+                <div>
+                    <input class="signUp" type="button" value="Войти">
+                    <input class="signUp" type="button" value="Зарегестрироваться" onclick="location.href='/registration'">
+                </div>
         </form>
     </main>
 </body>

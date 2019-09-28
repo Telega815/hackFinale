@@ -20,10 +20,10 @@
 <body>
     <header>
         <div id="menu">
-            <img src="${pageContext.request.contextPath}/resources/media/user_male-512.png" alt="">
+            <img src="${pageContext.request.contextPath}/resources/media/user_male.png" alt="">
         </div>
         <div id="search">
-            <input id="searchInput" placeholder="Поиск">
+            <input id="searchInput" placeholder="   Поиск">
         </div>
         <div id="notification">
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
@@ -34,14 +34,14 @@
         <div class="cat11">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/like_open.png" alt="" style="width: 25px; height: 25px;">
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
         <div class="cat11">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/like_close.png" alt="" style="width: 25px; height: 25px;">
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
@@ -50,16 +50,16 @@
         <div class="cat11">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/like_close.png" alt="" style="width: 25px; height: 25px;">
             </div>
             <span>jhdfgjhdfgtfd</span>
         </div>
         <div class="cat11">
             <div class="cat1img">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/like_open.png" alt="" style="width: 25px; height: 25px;">
             </div>
-            <span>jhdfgjhdfgtfd</span>
+            <span>sdfgsdfsdfsdf</span>
         </div>
     </div>
     <div id="historySpan">
@@ -67,28 +67,46 @@
     </div>
     <div class="historyDiv">
         <div class="hist histbordup">
+            <div class="histCent">
+                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <span>Почему на банкнотах и монетах Банка России помещен герб Временного правительства 1917 года, а не герб Российской Федерации?</span>
+            </div>
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-            <span>mxznhxzmhjfsdjhfkj</span>
         </div>
         <div class="hist">
+            <div class="histCent">
+                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <span>mxznhxzmhjfsdjhfkj</span>
+            </div>
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-            <span>mxznhxzmhjfsdjhfkj</span>
         </div>
         <div class="hist">
+            <div class="histCent">
+                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <span>mxznhxzmhjfsdjhfkj</span>
+            </div>
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-            <span>mxznhxzmhjfsdjhfkj</span>
         </div>
         <div class="hist">
+            <div class="histCent">
+                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <span>mxznhxzmhjfsdjhfkj</span>
+            </div>
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-            <span>mxznhxzmhjfsdjhfkj</span>
         </div>
         <div class="hist">
+            <div class="histCent">
+                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <span>mxznhxzmhjfsdjhfkj</span>
+            </div>
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-            <span>mxznhxzmhjfsdjhfkj</span>
         </div>
         <div class="hist histbordbottom">
+            <div class="histCent">
+                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <span>mxznhxzmhjfsdjhfkj</span>
+            </div>
             <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-            <span>mxznhxzmhjfsdjhfkj</span>
         </div>
     </div>
 </main>
