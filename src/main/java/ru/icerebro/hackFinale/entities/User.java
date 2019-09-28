@@ -6,7 +6,8 @@ public class User {
     private String pwd;
     private Group group;
     private String email;
-    private Integer phoneNumber;
+    private String phoneNumber;
+    private Boolean juristic;
 
 
     public int getId() {
@@ -53,11 +54,11 @@ public class User {
     }
 
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -75,7 +76,7 @@ public class User {
         if (group != null ? !group.equals(user.group) : user.group != null) return false;
         if (email != null ? !email.equals(user.email) : user.email != null) return false;
         if (phoneNumber != null ? !phoneNumber.equals(user.phoneNumber) : user.phoneNumber != null) return false;
-
+        if (juristic != null ? !juristic.equals(user.juristic) : user.juristic != null) return false;
         return true;
     }
 
@@ -87,6 +88,15 @@ public class User {
         result = 31 * result + (group != null ? group.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (juristic != null ? juristic.hashCode() : 0);
         return result;
+    }
+
+    public Boolean getJuristic() {
+        return juristic;
+    }
+
+    public void setJuristic(Boolean juristic) {
+        this.juristic = juristic;
     }
 }

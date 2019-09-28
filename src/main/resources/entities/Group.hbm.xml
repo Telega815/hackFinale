@@ -5,7 +5,7 @@
 <hibernate-mapping>
 
     <class name="ru.icerebro.hackFinale.entities.Group" table="groups" schema="public"
-           catalog="swapydb">
+           catalog="hackdb">
         <id name="id">
             <column name="id" sql-type="integer"/>
             <generator class="increment"/>
