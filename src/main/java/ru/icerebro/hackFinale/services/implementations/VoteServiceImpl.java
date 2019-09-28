@@ -2,6 +2,7 @@ package ru.icerebro.hackFinale.services.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.icerebro.hackFinale.JSON.JsonVoteResList;
 import ru.icerebro.hackFinale.dao.interfaces.AnswerDAO;
 import ru.icerebro.hackFinale.dao.interfaces.QuestionDAO;
 import ru.icerebro.hackFinale.dao.interfaces.UserWatchedDAO;
@@ -47,7 +48,7 @@ public class VoteServiceImpl implements VoteService {
     }
 
     @Override
-    public void voteNow(User loggedInUser, Integer qId, Integer answ) {
+    public JsonVoteResList voteNow(User loggedInUser, Integer qId, Integer answ) {
         Question question = questionDAO.getQuestions(qId);
         Answer answer = answerDAO.getAnswers(answ);
         answer.setVotecount(answer.getVotecount() + 1);
@@ -57,6 +58,9 @@ public class VoteServiceImpl implements VoteService {
         userwatched.setUser(loggedInUser);
         userwatched.setQuestion(question);
         userWatchedDAO.saveUserWatched(userwatched);
+
+        List<Answer> answers = answerDAO.getAnswers(question);
+        return new JsonVoteResList(qId, answers);
     }
 
     @Override

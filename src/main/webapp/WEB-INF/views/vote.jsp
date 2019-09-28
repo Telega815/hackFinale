@@ -19,12 +19,19 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/vote.css">
     <script src="${pageContext.request.contextPath}/resources/js/jquery-3.3.1.js"></script>
     <script src="${pageContext.request.contextPath}/resources/js/VoteScripts.js"></script>
+
+    <script src="${pageContext.request.contextPath}/resources/js/LoDash.js"></script>
+
 </head>
 <body>
 <jsp:include page="header.jsp"/>
     <main>
         <div style="margin: 45px 0 0 0;">
 
+
+            <script type="text/template" id="questionTemplate">
+                <jsp:include page="includes/question.jsp"/>
+            </script>
 
     <c:forEach items="${questions}" var="question" varStatus="status">
 
@@ -68,12 +75,12 @@
             <div class="voteBlock">
                 <form class="voteForm">
                     <p class="question">${question.description}</p>
-                    <div class="choice">
+                    <div id="answers_${question.id}" class="choice">
                         <c:forEach items="${answ.values().toArray()[question.id-1]}" var="answer" varStatus="status">
                             <p class="answerСhoice">${answer.description}<input onclick="answChoise(event)" class="answerForQ_${question.id}" id="answer_${answer.id}" type="radio" name="answer" value="a1"></p>
                         </c:forEach>
                     </div>
-                    <div style="padding: 80px 0 0 0;">
+                    <div id="qSubmitWrapper_${question.id}" style="padding: 80px 0 0 0;">
                         <input id="qSubmit_${question.id}" onclick="voteNow(event)" class="voteSubmit" type="button" value="Проголосовать">
                     </div>
                 </form>

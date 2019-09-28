@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ru.icerebro.hackFinale.JSON.JsonVote;
 import ru.icerebro.hackFinale.JSON.JsonVoteList;
+import ru.icerebro.hackFinale.JSON.JsonVoteResList;
 import ru.icerebro.hackFinale.entities.User;
 import ru.icerebro.hackFinale.entities.UserLikes;
 import ru.icerebro.hackFinale.services.interfaces.UserService;
@@ -74,22 +75,21 @@ public class RestController {
 
     @GetMapping(value = "/restService/VoteNow")
     @ResponseBody
-    public int toggleHeart(HttpSession session,
-                           @RequestParam(value = "qId") Integer qId,
-                           @RequestParam(value = "answ") Integer answ,
-                           HttpServletRequest request,
-                           HttpServletResponse response){
+    public JsonVoteResList toggleHeart(HttpSession session,
+                                       @RequestParam(value = "qId") Integer qId,
+                                       @RequestParam(value = "answ") Integer answ,
+                                       HttpServletRequest request,
+                                       HttpServletResponse response){
 
         String userName;
 
         if (request.getUserPrincipal() != null){
             userName = request.getUserPrincipal().getName();
             User loggedInUser = userService.getUser(userName);
-            voteService.voteNow(loggedInUser, qId, answ);
-            return 0;
+            return voteService.voteNow(loggedInUser, qId, answ);
         }else {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            return -1;
+            return null;
         }
     }
 }
