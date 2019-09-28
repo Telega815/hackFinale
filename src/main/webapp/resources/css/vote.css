@@ -89,3 +89,13 @@ header{
     margin: 20px 0 0 0;
     border-radius: 10px 10px 0 0;
 }
+.voiceAllPeople{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 20px 0;
+}
+.voiceAllPeople span{
+    color: #555;
+    font-size: 14px;
+    font-family: Arial;
+}
