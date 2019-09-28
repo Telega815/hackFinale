@@ -57,6 +57,14 @@ main {
     width: 60vw;
     margin-top: 10px;
     font-size: 18px;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.loginInputs1 {
+    width: 60vw;
+    margin-top: 10px;
+    font-size: 18px;
     color: #eee;
     padding: 5px 10px;
     border-radius: 5px;
@@ -65,7 +73,7 @@ main {
 .signUpReg {
     width: 55vw;
     height: 40px;
-    color: #eee;
+    color: black;
     background-color: #4f955b;
     font-size: 18px;
     font-family: Arial;

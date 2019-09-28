@@ -24,7 +24,7 @@
 </head>
 <body>
     <header>
-        <div id="menu">
+        <div id="menu" onclick="location.href='/service/logoutProcessing'">
             <img src="${pageContext.request.contextPath}/resources/media/user_male.png" alt="">
         </div>
         <div id="search">
@@ -85,48 +85,81 @@
         <span>История</span>
     </div>
     <div class="historyDiv">
-        <div class="hist histbordup">
-            <div class="histCent">
+
+        <c:forEach items="${watchedList}" var="watched" varStatus="status">
+            <c:if test="${status.count == 1}">
+                <div class="hist histbordup">
+                    <div class="histCent">
+                    <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                    <span>${watched.question.description}</span>
+                    </div>
+                    <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                </div>
+            </c:if>
+
+
+            <c:if test="${status.count != 1 && status.count == watchedList.size()}">
+                <div class="hist histbordbottom">
+                <div class="histCent">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>Почему на банкнотах и монетах Банка России помещен герб Временного правительства 1917 года, а не герб Российской Федерации?</span>
-            </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-        </div>
-        <div class="hist">
-            <div class="histCent">
+                <span>${watched.question.description}</span>
+                </div>
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>mxznhxzmhjfsdjhfkj</span>
-            </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-        </div>
-        <div class="hist">
-            <div class="histCent">
+                </div>
+            </c:if>
+
+            <c:if test="${status.count != 1 && status.count != watchedList.size()}">
+                <div class="hist">
+                <div class="histCent">
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>mxznhxzmhjfsdjhfkj</span>
-            </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-        </div>
-        <div class="hist">
-            <div class="histCent">
+                <span>${watched.question.description}</span>
+                </div>
                 <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>mxznhxzmhjfsdjhfkj</span>
-            </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-        </div>
-        <div class="hist">
-            <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>mxznhxzmhjfsdjhfkj</span>
-            </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-        </div>
-        <div class="hist histbordbottom">
-            <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-                <span>mxznhxzmhjfsdjhfkj</span>
-            </div>
-            <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
-        </div>
+                </div>
+            </c:if>
+        </c:forEach>
+        <%--<div class="hist histbordup">--%>
+            <%--<div class="histCent">--%>
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+                <%--<span>Почему на банкнотах и монетах Банка России помещен герб Временного правительства 1917 года, а не герб Российской Федерации?</span>--%>
+            <%--</div>--%>
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+        <%--</div>--%>
+        <%--<div class="hist">--%>
+            <%--<div class="histCent">--%>
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+                <%--<span>mxznhxzmhjfsdjhfkj</span>--%>
+            <%--</div>--%>
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+        <%--</div>--%>
+        <%--<div class="hist">--%>
+            <%--<div class="histCent">--%>
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+                <%--<span>mxznhxzmhjfsdjhfkj</span>--%>
+            <%--</div>--%>
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+        <%--</div>--%>
+        <%--<div class="hist">--%>
+            <%--<div class="histCent">--%>
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+                <%--<span>mxznhxzmhjfsdjhfkj</span>--%>
+            <%--</div>--%>
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+        <%--</div>--%>
+        <%--<div class="hist">--%>
+            <%--<div class="histCent">--%>
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+                <%--<span>mxznhxzmhjfsdjhfkj</span>--%>
+            <%--</div>--%>
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+        <%--</div>--%>
+        <%--<div class="hist histbordbottom">--%>
+            <%--<div class="histCent">--%>
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+                <%--<span>mxznhxzmhjfsdjhfkj</span>--%>
+            <%--</div>--%>
+            <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
+        <%--</div>--%>
     </div>
 </main>
 </body>

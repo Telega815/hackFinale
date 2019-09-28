@@ -25,7 +25,7 @@
         <form:input form="inputForm" path="username" class="loginInputs" placeholder="Имя пользователя"/>
         <form:input form="inputForm" path="pwd" class="loginInputs" placeholder="Пароль"/>
         <form:input form="inputForm" path="phoneNumber" type="tel" class="loginInputs" placeholder="Телефон"/>
-        <p  class="loginInputs"><form:checkbox path="juristic" name="a" value="юр лицо"/>  юр. лицо</p>
+        <p  class="loginInputs1"><form:checkbox path="juristic" name="a" value="юр лицо"/>  юр. лицо</p>
         <input form="inputForm" class="signUpReg" type="submit" value="Зарегестрироваться">
     </form:form>
 </main>

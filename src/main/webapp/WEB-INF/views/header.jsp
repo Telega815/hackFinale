@@ -19,7 +19,7 @@
 <body>
     <header>
         <%--<input id="backButton" type="button" value="&larr;">--%>
-        <div id="backButton"><span>Назад</span></div>
+        <div onclick="history.back()" id="backButton"><span>Назад</span></div>
     </header>
 </body>
     <%--<script src="${pageContext.request.contextPath}/resources/js/script.js"></script>--%>

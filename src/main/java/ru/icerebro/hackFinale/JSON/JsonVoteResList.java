@@ -21,7 +21,7 @@ public class JsonVoteResList {
         }
 
         for (Answer a:answers) {
-            resList.add(new JsonVoteRes(a.getId(), a.getDescription(), a.getVotecount()/count * 100));
+            resList.add(new JsonVoteRes(a.getId(), a.getDescription(), (int)((float)a.getVotecount()/(float) count * 100)));
         }
 
         this.votecount = count;

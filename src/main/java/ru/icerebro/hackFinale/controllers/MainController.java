@@ -2,6 +2,7 @@ package ru.icerebro.hackFinale.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,13 +29,25 @@ public class MainController {
     }
 
     @GetMapping(value = "/")
-    public ModelAndView welcomePage() {
+    public ModelAndView welcomePage(HttpServletRequest request,
+                                    ModelMap model) {
+
+
+        User loggedUser = null;
+        if (request.getUserPrincipal() != null)
+            loggedUser = userService.getUser(request.getUserPrincipal().getName());
+
+        if (loggedUser != null){
+            return new ModelAndView("redirect:/mainpage", model);
+        }
+
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("welcome_page");
 
         User user = new User();
         modelAndView.addObject("user", user);
+
 
         return modelAndView;
     }
@@ -60,30 +73,19 @@ public class MainController {
     }
 
     @GetMapping(value = "/mainpage")
-    public ModelAndView mainPage(){
+    public ModelAndView mainPage(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("mainPage");
 
-//        List<UserLikes> list = userService.getUserLikes(request.getUserPrincipal().getName());
-//
-//        List<String> strings = new ArrayList<String>(4);
-//
-//        list.sort((o1, o2) -> {
-//            if (o1.getVotecategory() < o2.getVotecategory())
-//                return -1;
-//            else if (Objects.equals(o1.getVotecategory(), o2.getVotecategory()))
-//                return 0;
-//            else
-//                return 1;
-//        });
-//        for (UserLikes like: list) {
-//            if (like.getLike())
-//                strings.add("like_close");
-//            else
-//                strings.add("like_open");
-//        }
-//
-//        modelAndView.addObject("likes", strings);
+        User loggedUser = null;
+        if (request.getUserPrincipal() != null)
+            loggedUser = userService.getUser(request.getUserPrincipal().getName());
+
+        List<Userwatched> list = voteService.isAnswered(loggedUser);
+
+        list.sort((o1, o2) -> Integer.compare(o2.getId(), o1.getId()));
+
+        modelAndView.addObject("watchedList", list);
 
         return modelAndView;
     }

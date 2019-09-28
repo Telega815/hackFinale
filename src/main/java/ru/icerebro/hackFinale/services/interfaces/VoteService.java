@@ -15,4 +15,6 @@ public interface VoteService {
     JsonVoteResList voteNow(User loggedInUser, Integer qId, Integer answ);
 
     Userwatched isAnswered(User loggedUser, Question question);
+
+    List<Userwatched> isAnswered(User loggedUser);
 }
