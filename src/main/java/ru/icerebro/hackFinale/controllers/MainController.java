@@ -7,17 +7,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import ru.icerebro.hackFinale.entities.Answer;
-import ru.icerebro.hackFinale.entities.Question;
-import ru.icerebro.hackFinale.entities.User;
-import ru.icerebro.hackFinale.entities.Vote;
+import ru.icerebro.hackFinale.entities.*;
 import ru.icerebro.hackFinale.services.interfaces.UserService;
 import ru.icerebro.hackFinale.services.interfaces.VoteService;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 @Controller
 public class MainController {
@@ -105,7 +100,8 @@ public class MainController {
     }
 
     @GetMapping(value = "/Vote")
-    public ModelAndView toVote(@RequestParam(value = "vote") Integer vote){
+    public ModelAndView toVote(@RequestParam(value = "vote") Integer vote,
+                               HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("vote");
 
@@ -117,15 +113,33 @@ public class MainController {
 
         Map<Integer, List<Answer>> map = new HashMap<>();
 
+        User loggedUser = userService.getUser(request.getUserPrincipal().getName());
+
+        List<Userwatched> list = new ArrayList<>();
+
+        Map<Integer, Integer> voteMap = new HashMap<>();
+
         for (Question q:questions) {
+            Userwatched userwatched = voteService.isAnswered(loggedUser, q);
+
+            if (userwatched != null)
+                list.add(userwatched);
             List<Answer> answers = voteService.getAnswers(q);
 
             answers.sort(Comparator.comparingInt(Answer::getId));
-
             map.put(q.getId(), answers);
+
+            Integer aSum = 0;
+            for (Answer answer: answers) {
+                aSum+=answer.getVotecount();
+            }
+            voteMap.put(q.getId(), aSum);
         }
 
+        modelAndView.addObject("wached", list);
         modelAndView.addObject("answ", map);
+        modelAndView.addObject("voteMap", voteMap);
+
 
         return modelAndView;
     }

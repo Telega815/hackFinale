@@ -30,24 +30,24 @@ public class RestController {
     }
 
 
-    @GetMapping(value = "/restService/getVotes")
-    @ResponseBody
-    public JsonVoteList getVotes(HttpSession session,
-                                @RequestParam(value = "votecategory") Integer votecategory,
-                                HttpServletRequest request,
-                                HttpServletResponse response){
-
-        String userName;
-
-        if (request.getUserPrincipal() != null){
-            userName = request.getUserPrincipal().getName();
-            User loggedInUser = userService.getUser(userName);
-            return new JsonVoteList(loggedInUser, voteService.getVotes(votecategory));
-        }else {
-            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            return null;
-        }
-    }
+//    @GetMapping(value = "/restService/getVotes")
+//    @ResponseBody
+//    public JsonVoteList getVotes(HttpSession session,
+//                                @RequestParam(value = "votecategory") Integer votecategory,
+//                                HttpServletRequest request,
+//                                HttpServletResponse response){
+//
+//        String userName;
+//
+//        if (request.getUserPrincipal() != null){
+//            userName = request.getUserPrincipal().getName();
+//            User loggedInUser = userService.getUser(userName);
+//            return new JsonVoteList(loggedInUser, voteService.getVotes(votecategory));
+//        }else {
+//            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+//            return null;
+//        }
+//    }
 
     @GetMapping(value = "/restService/toggleHeart")
     @ResponseBody

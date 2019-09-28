@@ -58,4 +58,9 @@ public class VoteServiceImpl implements VoteService {
         userwatched.setQuestion(question);
         userWatchedDAO.saveUserWatched(userwatched);
     }
+
+    @Override
+    public Userwatched isAnswered(User loggedUser, Question question) {
+        return userWatchedDAO.getUserWatched(loggedUser, question);
+    }
 }

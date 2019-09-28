@@ -1,9 +1,6 @@
 package ru.icerebro.hackFinale.services.interfaces;
 
-import ru.icerebro.hackFinale.entities.User;
-import ru.icerebro.hackFinale.entities.UserLikes;
-import ru.icerebro.hackFinale.entities.Userwatched;
-import ru.icerebro.hackFinale.entities.Vote;
+import ru.icerebro.hackFinale.entities.*;
 
 import java.util.List;
 
@@ -14,7 +11,7 @@ public interface UserService {
 
     User getUser(Integer pageOwnerId);
 
-    Userwatched isWatched(User user, Vote vote);
+    Userwatched isWatched(User user, Question question);
 
     UserLikes toggleHeart(User loggedInUser, Integer heart);
 

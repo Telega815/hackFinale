@@ -111,8 +111,8 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
     }
 
     @Override
-    public Userwatched isWatched(User user, Vote vote) {
-        Userwatched userwatched = userWatchedDAO.getUserWatched(user, vote);
+    public Userwatched isWatched(User user, Question question) {
+        Userwatched userwatched = userWatchedDAO.getUserWatched(user, question);
         return userwatched;
     }
 

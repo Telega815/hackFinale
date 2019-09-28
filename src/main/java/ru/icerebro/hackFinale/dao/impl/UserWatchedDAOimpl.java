@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.icerebro.hackFinale.dao.interfaces.UserWatchedDAO;
+import ru.icerebro.hackFinale.entities.Question;
 import ru.icerebro.hackFinale.entities.User;
 import ru.icerebro.hackFinale.entities.Userwatched;
 import ru.icerebro.hackFinale.entities.Vote;
@@ -50,11 +51,11 @@ public class UserWatchedDAOimpl implements UserWatchedDAO {
 
     @Override
     @Transactional
-    public Userwatched getUserWatched(User user, Vote vote) {
+    public Userwatched getUserWatched(User user, Question question) {
         List<Userwatched> list = sessionFactory.getCurrentSession()
-                .createQuery("from Userwatched  where user=:user and vote=:vote")
+                .createQuery("from Userwatched  where user=:user and question=:q")
                 .setParameter("user", user)
-                .setParameter("vote", vote).list();
+                .setParameter("q", question).list();
 
         if (list == null || list.isEmpty())
             return null;

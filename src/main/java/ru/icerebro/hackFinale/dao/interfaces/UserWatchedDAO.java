@@ -1,5 +1,6 @@
 package ru.icerebro.hackFinale.dao.interfaces;
 
+import ru.icerebro.hackFinale.entities.Question;
 import ru.icerebro.hackFinale.entities.User;
 import ru.icerebro.hackFinale.entities.Userwatched;
 import ru.icerebro.hackFinale.entities.Vote;
@@ -12,5 +13,5 @@ public interface UserWatchedDAO {
     void deleteUserWatched(Userwatched userwatched);
     void updateUserWatched(Userwatched userwatched);
 
-    Userwatched getUserWatched(User user, Vote vote);
+    Userwatched getUserWatched(User user, Question question);
 }

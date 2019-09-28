@@ -1,6 +1,7 @@
 package ru.icerebro.hackFinale.JSON;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import ru.icerebro.hackFinale.entities.Question;
 import ru.icerebro.hackFinale.entities.User;
 import ru.icerebro.hackFinale.entities.Vote;
 import ru.icerebro.hackFinale.services.interfaces.UserService;
@@ -18,7 +19,7 @@ public class JsonVoteList {
         voteList = new ArrayList<>();
 
         for (Vote vote: votes) {
-            voteList.add(new JsonVote(userService.isWatched(user, vote), vote));
+            voteList.add(new JsonVote(userService.isWatched(user, new Question()), vote));
         }
     }
 }
