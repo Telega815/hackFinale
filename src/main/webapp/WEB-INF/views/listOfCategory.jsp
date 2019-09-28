@@ -25,7 +25,7 @@
     <ul class="tasks">
         <c:forEach items="${votes}" var="vote" varStatus="status">
             <li>
-                <a href="#" class="taskName">
+                <a href="${pageContext.request.contextPath}/Vote?vote=${vote.id}" class="taskName">
                     <img class="taskImg" src="${pageContext.request.contextPath}/resources/media/tasks.png" alt="">
                     <span class="taskText">${vote.votename}</span>
                 </a>

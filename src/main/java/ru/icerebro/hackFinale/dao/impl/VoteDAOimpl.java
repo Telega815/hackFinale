@@ -46,4 +46,10 @@ public class VoteDAOimpl implements VoteDAO {
     public void updateVote(Vote vote) {
         sessionFactory.getCurrentSession().update(vote);
     }
+
+    @Override
+    @Transactional
+    public Vote getVote(Integer vote) {
+        return sessionFactory.getCurrentSession().get(Vote.class, vote);
+    }
 }

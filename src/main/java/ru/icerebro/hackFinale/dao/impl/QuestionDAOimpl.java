@@ -25,8 +25,8 @@ public class QuestionDAOimpl implements QuestionDAO {
     @Transactional
     public List<Question> getQuestions(Vote vote) {
         List<Question> list = sessionFactory.getCurrentSession()
-                .createQuery("from Question where Vote =:vote")
-                .setParameter("vote", vote).list();
+                .createQuery("from Question where vote =:v")
+                .setParameter("v", vote).list();
         return list;
     }
 
