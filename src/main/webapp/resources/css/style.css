@@ -52,8 +52,31 @@ main {
     border-radius: 5px;
 }
 
-.signUp {
-    font-size: 30px;
+/*.signUp {*/
+    /*font-size: 30px;*/
+    /*margin-top: 20px;*/
+    /*color: blue;*/
+/*}*/
+.regUp{
+    background-color: black;
+    font-size: 16px;
     margin-top: 20px;
-    color: blue;
+    color: #4487f0;
+    font-family: Arial;
+    -webkit-appearance: none;
+}
+.regUpGo{
+    font-size: 20px;
+    color: #eee;
+    background-color: #4f955b;
+    padding: 5px;
+    margin-top: 20px;
+    font-family: Arial;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+#regBlock{
+    width: 56vw;
+    display: flex;
+    justify-content: space-between;
 }
