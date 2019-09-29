@@ -44,7 +44,7 @@
 
         <c:if test="${passed == 1}">
             <div class="imgVoteClip">
-                <img class="voteImg" src="${pageContext.request.contextPath}/resources/media/bnm.jpg" alt="">
+                <img class="voteImg" src="${pageContext.request.contextPath}/resources/media/a (${question.id%6+1}).jpg" alt="">
             </div>
             <div class="voteBlock">
                 <form class="voteForm">
@@ -70,7 +70,7 @@
 
         <c:if test="${passed == 0}">
             <div class="imgVoteClip">
-                <img class="voteImg" src="${pageContext.request.contextPath}/resources/media/hjk.jpeg" alt="">
+                <img class="voteImg" src="${pageContext.request.contextPath}/resources/media/a (${question.id%6+1}).jpg" alt="">
             </div>
             <div class="voteBlock">
                 <form class="voteForm">
