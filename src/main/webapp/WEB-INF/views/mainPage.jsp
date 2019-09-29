@@ -38,7 +38,7 @@
     <div class="cat1">
         <div class="cat11"  onclick="location.href='/Category?votecategory=1'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/rub.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/1.png" alt="">
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(0)}.png"--%>
                      <%--id="heart_1" class="heart_close"--%>
                      <%--onclick=favoriteCategorySwitch(event);--%>
@@ -48,7 +48,7 @@
         </div>
         <div class="cat11" onclick="location.href='/Category?votecategory=2'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/pensii.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/2.png" alt="">
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(1)}.png"--%>
                      <%--id="heart_2" class="heart_close"--%>
                      <%--onclick=favoriteCategorySwitch(event);--%>
@@ -61,7 +61,7 @@
     <div class="cat1">
         <div class="cat11" onclick="location.href='/Category?votecategory=3'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/bank.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/3.png" alt="">
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(2)}.png"--%>
                      <%--id="heart_3" class="heart_close"--%>
                      <%--onclick=favoriteCategorySwitch(event);--%>
@@ -71,7 +71,7 @@
         </div>
         <div class="cat11" onclick="location.href='/Category?votecategory=4'">
             <div class="cat1img">
-                <img src="${pageContext.request.contextPath}/resources/media/finansi.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/4.png" alt="">
 
                 <%--<img src="${pageContext.request.contextPath}/resources/media/${likes.get(3)}.png"--%>
                      <%--id="heart_4" class="heart_close"--%>
@@ -90,10 +90,10 @@
             <c:if test="${status.count == 1}">
                 <div class="hist histbordup">
                     <div class="histCent">
-                    <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                    <img src="${pageContext.request.contextPath}/resources/media/${watched.question.vote.votecategory}.png" alt="">
                     <span>${watched.question.description}</span>
                     </div>
-                    <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                    <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
                 </div>
             </c:if>
 
@@ -101,20 +101,20 @@
             <c:if test="${status.count != 1 && status.count == watchedList.size()}">
                 <div class="hist histbordbottom">
                 <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/${watched.question.vote.votecategory}.png" alt="">
                 <span>${watched.question.description}</span>
                 </div>
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
                 </div>
             </c:if>
 
             <c:if test="${status.count != 1 && status.count != watchedList.size()}">
                 <div class="hist">
                 <div class="histCent">
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <img src="${pageContext.request.contextPath}/resources/media/${watched.question.vote.votecategory}.png" alt="">
                 <span>${watched.question.description}</span>
                 </div>
-                <img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">
+                <%--<img src="${pageContext.request.contextPath}/resources/media/asd.png" alt="">--%>
                 </div>
             </c:if>
         </c:forEach>

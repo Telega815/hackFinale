@@ -16,6 +16,12 @@
     <beans:import resource="application-security-beans.xml"/>
 
     <http use-expressions="true">
+        <intercept-url pattern="/mainpage"
+                       access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/Vote"
+                       access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/Category"
+                       access="hasRole('ROLE_USER')"/>
         <session-management session-fixation-protection="newSession">
             <concurrency-control expired-url="/error/sessionExpired"  />
         </session-management>
