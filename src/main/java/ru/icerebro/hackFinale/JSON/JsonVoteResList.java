@@ -4,24 +4,25 @@ import ru.icerebro.hackFinale.entities.Answer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class JsonVoteResList {
     private List<JsonVoteRes> resList;
     private int id;
     private int votecount;
 
-    public JsonVoteResList(Integer qId, List<Answer> answers) {
+    public JsonVoteResList(Integer qId, Map<Integer, Answer> answers) {
         this.id = qId;
         resList = new ArrayList<>();
 
         int count = 0;
 
-        for (Answer a:answers) {
-            count+= a.getVotecount();
+        for (Map.Entry<Integer, Answer> entry : answers.entrySet()) {
+            count+= entry.getValue().getVotecount();
         }
 
-        for (Answer a:answers) {
-            resList.add(new JsonVoteRes(a.getId(), a.getDescription(), (int)((float)a.getVotecount()/(float) count * 100)));
+        for (Map.Entry<Integer, Answer> entry : answers.entrySet()) {
+            resList.add(new JsonVoteRes(entry.getKey(), entry.getValue().getDescription(), (int)((float)entry.getValue().getVotecount()/(float) count * 100)));
         }
 
         this.votecount = count;

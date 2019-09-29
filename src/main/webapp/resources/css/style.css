@@ -99,7 +99,7 @@ main {
     border-radius: 0;
 }
 #regBlock{
-    width: 56vw;
+    width: 60vw;
     display: flex;
     justify-content: space-between;
 }
@@ -111,3 +111,8 @@ main {
     justify-content: center;
     font-family: Arial;
 }
+/*.bodyB{*/
+    /*width: 100vw;*/
+    /*height: 100vh;*/
+    /*position: fixed;*/
+/*}*/

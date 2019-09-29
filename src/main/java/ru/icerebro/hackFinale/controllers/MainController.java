@@ -129,6 +129,7 @@ public class MainController {
                 list.add(userwatched);
             List<Answer> answers = voteService.getAnswers(q);
 
+
             answers.sort(Comparator.comparingInt(Answer::getId));
             map.put(q.getId(), answers);
 

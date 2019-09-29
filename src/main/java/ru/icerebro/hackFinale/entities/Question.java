@@ -1,9 +1,20 @@
 package ru.icerebro.hackFinale.entities;
 
+import java.util.Map;
+
 public class Question {
     private int id;
     private String description;
     private Vote vote;
+    private Map<Integer,Answer> answers;
+
+    public Map<Integer,Answer> getAnswers() {
+        return answers;
+    }
+
+    public void setAnswers(Map<Integer,Answer> answers) {
+        this.answers = answers;
+    }
 
     public int getId() {
         return id;

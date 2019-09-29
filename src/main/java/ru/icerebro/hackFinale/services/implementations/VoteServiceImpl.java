@@ -53,14 +53,16 @@ public class VoteServiceImpl implements VoteService {
         Answer answer = answerDAO.getAnswers(answ);
         answer.setVotecount(answer.getVotecount() + 1);
         answerDAO.updateAnswer(answer);
+        questionDAO.updateQuestions(question);
 
         Userwatched userwatched = new Userwatched();
         userwatched.setUser(loggedInUser);
         userwatched.setQuestion(question);
         userWatchedDAO.saveUserWatched(userwatched);
 
-        List<Answer> answers = answerDAO.getAnswers(question);
-        return new JsonVoteResList(qId, answers);
+        question = questionDAO.getQuestions(qId);
+//        List<Answer> answers = answerDAO.getAnswers(question);
+        return new JsonVoteResList(qId, question.getAnswers());
     }
 
     @Override

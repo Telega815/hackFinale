@@ -13,5 +13,13 @@
         <many-to-one name="vote" cascade="all" class="ru.icerebro.hackFinale.entities.Vote" fetch="join" lazy="false">
             <column name="vote"/>
         </many-to-one>
+
+        <map name="answers" lazy="false" fetch="join" catalog="hackdb" table="answers" schema="public" cascade="all">
+            <key>
+                <column name="question"/>
+            </key>
+            <map-key type="java.lang.Integer" column="id"/>
+            <one-to-many class="ru.icerebro.hackFinale.entities.Answer" not-found="ignore"/>
+        </map>
     </class>
 </hibernate-mapping>

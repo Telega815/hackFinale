@@ -50,7 +50,7 @@
                 <form class="voteForm">
                     <p class="question">${question.description}</p>
                     <div class="choice">
-                        <c:forEach items="${answ.values().toArray()[question.id-1]}" var="answer" varStatus="status">
+                        <c:forEach items="${question.answers.values()}" var="answer" varStatus="status">
                             <c:set var="percent" value="${String.format('%1$,.0f', answer.votecount/voteMap.get(question.id)*100)}"/>
                             <p class="answerСhoice" style="background: linear-gradient(to right, rgb(79,149,71) ${percent}%, rgb(56,56,56) ${percent}%);">
                                     ${answer.description}
@@ -76,7 +76,7 @@
                 <form class="voteForm">
                     <p class="question">${question.description}</p>
                     <div id="answers_${question.id}" class="choice">
-                        <c:forEach items="${answ.values().toArray()[question.id-1]}" var="answer" varStatus="status">
+                        <c:forEach items="${question.answers.values()}" var="answer" varStatus="status">
                             <p class="answerСhoice">${answer.description}<input onclick="answChoise(event)" class="answerForQ_${question.id}" id="answer_${answer.id}" type="radio" name="answer" value="a1"></p>
                         </c:forEach>
                     </div>

@@ -24,6 +24,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="${pageContext.request.contextPath}/resources/man.png">
 </head>
 <body>
+<div class="bodyB">
     <main>
         <div class="logo">
             <img class="logoImg" src="${pageContext.request.contextPath}/resources/media/logo.png">
@@ -39,5 +40,6 @@
             </div>
         </form:form>
     </main>
+</div>
 </body>
 </html>
