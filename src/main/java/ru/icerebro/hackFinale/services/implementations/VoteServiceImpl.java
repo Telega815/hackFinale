@@ -10,6 +10,7 @@ import ru.icerebro.hackFinale.dao.interfaces.VoteDAO;
 import ru.icerebro.hackFinale.entities.*;
 import ru.icerebro.hackFinale.services.interfaces.VoteService;
 
+import java.util.Collection;
 import java.util.List;
 
 @Service
@@ -50,10 +51,11 @@ public class VoteServiceImpl implements VoteService {
     @Override
     public JsonVoteResList voteNow(User loggedInUser, Integer qId, Integer answ) {
         Question question = questionDAO.getQuestions(qId);
-        Answer answer = answerDAO.getAnswers(answ);
+//        Answer answer = answerDAO.getAnswers(answ);
+//        Collection<Answer> answers = question.getAnswers().values();
+        Answer answer = question.getAnswers().get(answ);
         answer.setVotecount(answer.getVotecount() + 1);
         answerDAO.updateAnswer(answer);
-        questionDAO.updateQuestions(question);
 
         Userwatched userwatched = new Userwatched();
         userwatched.setUser(loggedInUser);
